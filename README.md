@@ -22,8 +22,14 @@ Tudo vive em um único arquivo: **`index.html`**. É só abrir no navegador ou h
 ## Como editar (bloco `CONFIG DO AUTOR`, no topo do `<script>`)
 
 - **Música de cada capítulo**: preencha o campo `music` do capítulo em `BOOK` (link do YouTube).
-- **Imagens de fundo (arte pintada)**: em `SCENE_IMAGES`, cole a URL da sua arte ao lado do id da cena
-  (ex.: `"c1-chegada"`, `"c2-ruas"`...). Enquanto vazio, usa a atmosfera em CSS.
+  Observação: alguns vídeos do YouTube (muitos clipes musicais oficiais) **bloqueiam a reprodução
+  fora do site** — nesses o player avisa e não toca. Prefira links que permitam incorporação
+  (lives de lofi, faixas de canais de trilha, etc.). Cópias em `assets/` para referência.
+- **Imagens de fundo (arte pintada)**: já vêm 5 artes embutidas (bar, bardo, cidade, beco, cabana),
+  mapeadas às cenas em `SCENE_IMAGES`. Para trocar uma arte, redefina a constante correspondente
+  (`BG_BAR`, `BG_BARDO`, `BG_CITY`, `BG_FOG`, `BG_CABIN`) ou aponte a cena para outra; use `""`
+  para voltar à atmosfera puramente em CSS. As imagens recebem um leve desfoque e um véu escuro
+  para o texto no centro se destacar.
 - **Dicas de releitura das perguntas**: campo `rehint` em cada nó do mapa mental — troque o texto
   placeholder pelo capítulo/trecho real que o leitor deve reler.
 
