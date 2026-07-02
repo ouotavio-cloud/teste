@@ -21,39 +21,48 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 /* ═══════════ SCENE BACKGROUNDS ═══════════ */
 .scene-bg{position:fixed;inset:0;z-index:0;transition:opacity 2s ease;opacity:0;pointer-events:none;background-size:cover;background-position:center}
 .scene-bg.active{opacity:1}
-/* Vinheta + escurecimento de base para legibilidade do texto por cima */
 .scene-bg::after{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse at 50% 35%,transparent 0%,rgba(10,10,15,0.35) 70%,rgba(10,10,15,0.75) 100%),
   linear-gradient(to bottom,rgba(10,10,15,0.35) 0%,rgba(10,10,15,0.55) 45%,rgba(10,10,15,0.9) 100%)}
 
-/* Cada cena: camadas de cor pintadas em CSS. Trocáveis por imagem (ver CONFIG no script). */
+/* Moods — Capítulo 1 */
 .bg-arrival{background:linear-gradient(150deg,#0d1117 0%,#1a2130 30%,#152430 60%,#0b0f16 100%);background-size:400% 400%;animation:fogDrift 26s ease infinite}
 .bg-arrival::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 22%,rgba(90,120,150,0.16) 0%,transparent 62%)}
-
 .bg-tavern{background:linear-gradient(180deg,#1a1108 0%,#2c1b0b 42%,#1d1206 100%)}
 .bg-tavern::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 28% 42%,rgba(210,145,52,0.12) 0%,transparent 58%),radial-gradient(ellipse at 72% 62%,rgba(180,100,30,0.08) 0%,transparent 50%)}
-
 .bg-brawl{background:linear-gradient(180deg,#1b0b08 0%,#2c1108 42%,#180707 100%)}
 .bg-brawl::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(205,62,32,0.11) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(150,40,40,0.07) 0%,transparent 45%)}
-
 .bg-bard{background:linear-gradient(180deg,#100a1c 0%,#1c0f2e 42%,#0d0816 100%)}
 .bg-bard::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(185,52,52,0.14) 0%,transparent 52%),radial-gradient(ellipse at 50% 72%,rgba(123,79,160,0.1) 0%,transparent 55%)}
-
 .bg-after-song{background:linear-gradient(180deg,#13100a 0%,#1c160d 42%,#100d08 100%)}
 .bg-after-song::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 42% 48%,rgba(185,145,62,0.08) 0%,transparent 55%)}
-
 .bg-morning{background:linear-gradient(180deg,#141724 0%,#1c1c2a 28%,#221c12 68%,#191510 100%)}
 .bg-morning::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 62% 18%,rgba(224,192,120,0.1) 0%,transparent 60%)}
-
 .bg-battle{background:linear-gradient(180deg,#120a0a 0%,#1b0d0d 42%,#0f0808 100%)}
 .bg-battle::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(62,102,182,0.09) 0%,transparent 50%),radial-gradient(ellipse at 32% 72%,rgba(205,62,32,0.07) 0%,transparent 42%)}
-
 .bg-aftermath{background:linear-gradient(180deg,#100d08 0%,#1c160d 50%,#0d0a06 100%)}
 .bg-aftermath::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 30%,rgba(150,128,84,0.09) 0%,transparent 62%),radial-gradient(ellipse at 60% 15%,rgba(224,200,140,0.06) 0%,transparent 55%)}
 
+/* Moods — Capítulo 2 */
+.bg-streets{background:linear-gradient(180deg,#0e1214 0%,#141b1c 40%,#0c1012 100%);background-size:300% 300%;animation:fogDrift 30s ease infinite}
+.bg-streets::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(120,140,140,0.1) 0%,transparent 60%),radial-gradient(ellipse at 70% 75%,rgba(80,110,90,0.07) 0%,transparent 50%)}
+.bg-confession{background:linear-gradient(180deg,#120c18 0%,#1a1024 45%,#0e0a14 100%)}
+.bg-confession::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 45% 55%,rgba(123,79,160,0.16) 0%,transparent 55%),radial-gradient(ellipse at 60% 30%,rgba(150,60,60,0.06) 0%,transparent 45%)}
+.bg-admin{background:linear-gradient(180deg,#101319 0%,#191d26 45%,#0d1016 100%)}
+.bg-admin::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 28%,rgba(150,160,180,0.09) 0%,transparent 58%),radial-gradient(ellipse at 40% 70%,rgba(180,150,70,0.05) 0%,transparent 50%)}
+.bg-nur{background:linear-gradient(180deg,#12100a 0%,#1a160c 40%,#0e0c07 100%);background-size:320% 320%;animation:fogDrift 28s ease infinite}
+.bg-nur::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(200,175,90,0.12) 0%,transparent 55%),radial-gradient(ellipse at 30% 30%,rgba(120,130,120,0.06) 0%,transparent 45%)}
+.bg-shop{background:linear-gradient(180deg,#0d1410 0%,#141c14 45%,#0a0f0b 100%)}
+.bg-shop::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 45%,rgba(90,150,90,0.1) 0%,transparent 55%),radial-gradient(ellipse at 65% 60%,rgba(190,150,60,0.08) 0%,transparent 50%)}
+.bg-explosion{background:linear-gradient(180deg,#1c0a06 0%,#2e1206 40%,#180705 100%)}
+.bg-explosion::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(230,110,40,0.18) 0%,transparent 55%),radial-gradient(ellipse at 40% 30%,rgba(240,180,60,0.1) 0%,transparent 45%)}
+.bg-beco{background:linear-gradient(180deg,#0c0a0e 0%,#160b10 45%,#080609 100%)}
+.bg-beco::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(150,40,50,0.12) 0%,transparent 55%),radial-gradient(ellipse at 30% 70%,rgba(60,40,80,0.08) 0%,transparent 45%)}
+.bg-bloodmagic{background:linear-gradient(180deg,#0a0a0d 0%,#14060a 45%,#050506 100%)}
+.bg-bloodmagic::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(200,30,50,0.14) 0%,transparent 48%),radial-gradient(ellipse at 50% 42%,rgba(240,240,240,0.05) 0%,transparent 30%)}
+
 @keyframes fogDrift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-/* Camada de névoa animada por cima de qualquer cena — reforça o clima */
 .fog-layer{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.5;background:
   radial-gradient(ellipse 80% 50% at 20% 30%,rgba(160,170,185,0.05),transparent 60%),
   radial-gradient(ellipse 70% 40% at 80% 70%,rgba(160,170,185,0.045),transparent 60%);
@@ -73,7 +82,7 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .hero .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--text-dim);font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;animation:bob 2.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
-/* ═══════════ READING AREA ═══════════ */
+/* ═══════════ READING ═══════════ */
 .reading-container{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 2rem 6rem}
 .chapter-header{text-align:center;padding:7rem 0 4rem;border-bottom:1px solid rgba(201,164,74,0.15);margin-bottom:3rem}
 .chapter-header .chapter-num{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:0.9rem}
@@ -99,6 +108,22 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .song-lyrics p::first-letter{font-size:inherit!important;float:none!important;padding:0!important;color:inherit!important;font-family:inherit!important}
 .song-lyrics p.stanza-gap{height:0.6rem;margin:0!important}
 
+/* ═══════════ CHAPTER END ═══════════ */
+.chapter-end{text-align:center;padding:4rem 0 2rem;border-top:1px solid rgba(201,164,74,0.15);margin-top:3rem}
+.chapter-end .end-ornament{color:var(--accent-dim);font-size:1.1rem;letter-spacing:0.7em;margin-bottom:1.6rem;opacity:0.55}
+.chapter-end .end-text{font-family:var(--font-body);font-style:italic;font-size:1.1rem;color:var(--text-dim);margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
+.check-btn{font-family:var(--font-display);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);background:transparent;border:1px solid var(--accent-dim);padding:0.9rem 2.1rem;cursor:pointer;transition:all 0.4s;border-radius:4px;display:inline-flex;align-items:center;gap:0.6rem}
+.check-btn:hover{background:rgba(201,164,74,0.1);border-color:var(--accent);box-shadow:0 0 22px rgba(201,164,74,0.12)}
+.check-btn.completed{background:rgba(201,164,74,0.16);border-color:var(--accent);color:var(--accent)}
+.unlock-hint{font-family:var(--font-ui);font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;margin-top:1rem;opacity:0.7}
+
+/* ═══════════ FLOATING BUTTONS (Arquivo + Música) ═══════════ */
+.dock-btn{position:fixed;bottom:1.5rem;z-index:100;width:54px;height:54px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--accent);font-size:1.3rem;background:rgba(12,12,20,0.95);border:1px solid rgba(201,164,74,0.22);border-radius:10px;backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,0.4);transition:color 0.3s,border-color 0.3s}
+.dock-btn:hover{color:var(--text);border-color:var(--accent)}
+.access-btn{left:1.5rem;flex-direction:column;font-size:1.2rem;gap:1px}
+.access-btn .lbl{font-family:var(--font-ui);font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim)}
+.access-btn .badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--accent);color:#1a1206;font-family:var(--font-ui);font-size:0.6rem;font-weight:600;display:flex;align-items:center;justify-content:center}
+
 /* ═══════════ MUSIC PLAYER ═══════════ */
 .music-player{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;background:rgba(12,12,20,0.95);border:1px solid rgba(201,164,74,0.22);border-radius:10px;overflow:hidden;backdrop-filter:blur(12px);transition:width 0.3s,height 0.3s;width:54px;height:54px;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
 .music-player.expanded{width:290px;height:auto}
@@ -116,37 +141,36 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .music-btns button.active{background:rgba(201,164,74,0.12);border-color:var(--accent);color:var(--accent)}
 #yt-player{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px}
 
-/* ═══════════ CHAPTER END & UNLOCK ═══════════ */
-.chapter-end{text-align:center;padding:4rem 0 2rem;border-top:1px solid rgba(201,164,74,0.15);margin-top:3rem}
-.chapter-end .end-ornament{color:var(--accent-dim);font-size:1.1rem;letter-spacing:0.7em;margin-bottom:1.6rem;opacity:0.55}
-.chapter-end .end-text{font-family:var(--font-body);font-style:italic;font-size:1.1rem;color:var(--text-dim);margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
-.check-btn{font-family:var(--font-display);font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);background:transparent;border:1px solid var(--accent-dim);padding:0.9rem 2.1rem;cursor:pointer;transition:all 0.4s;border-radius:4px;display:inline-flex;align-items:center;gap:0.6rem}
-.check-btn:hover{background:rgba(201,164,74,0.1);border-color:var(--accent);box-shadow:0 0 22px rgba(201,164,74,0.12)}
-.check-btn.completed{background:rgba(201,164,74,0.16);border-color:var(--accent);color:var(--accent)}
-.unlock-hint{font-family:var(--font-ui);font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;margin-top:1rem;opacity:0.7}
-
-/* ═══════════ MODAL ═══════════ */
+/* ═══════════ MODAL / PAINEL ═══════════ */
 .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(4,4,9,0.88);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity 0.35s}
 .modal-overlay.open{display:flex;opacity:1}
-.modal{background:rgba(14,14,21,0.98);border:1px solid rgba(201,164,74,0.22);border-radius:10px;width:100%;max-width:820px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.6);transform:translateY(14px) scale(0.99);transition:transform 0.35s}
+.modal{background:rgba(14,14,21,0.98);border:1px solid rgba(201,164,74,0.22);border-radius:10px;width:100%;max-width:820px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.6);transform:translateY(14px) scale(0.99);transition:transform 0.35s}
 .modal-overlay.open .modal{transform:translateY(0) scale(1)}
 .modal-header{display:flex;align-items:center;border-bottom:1px solid rgba(201,164,74,0.12);padding:0.5rem 1.2rem;gap:0.4rem}
-.modal-title-icon{color:var(--accent);font-size:0.9rem;margin-right:0.4rem;opacity:0.7}
 .modal-tab{font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);background:transparent;border:none;cursor:pointer;padding:0.9rem 1rem;transition:all 0.3s;border-bottom:2px solid transparent}
 .modal-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .modal-tab:hover{color:var(--text)}
 .modal-close{margin-left:auto;color:var(--text-dim);background:transparent;border:none;font-size:1.2rem;cursor:pointer;padding:0.4rem 0.6rem;border-radius:4px}
 .modal-close:hover{color:var(--text);background:rgba(255,255,255,0.05)}
-.modal-body{overflow-y:auto;padding:1.4rem 1.6rem;flex:1}
-.modal-intro{font-family:var(--font-body);font-style:italic;color:var(--text-dim);font-size:1rem;line-height:1.6;margin-bottom:1.4rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(201,164,74,0.08)}
+.modal-body{overflow-y:auto;padding:1.2rem 1.6rem 1.6rem;flex:1}
+.modal-intro{font-family:var(--font-body);font-style:italic;color:var(--text-dim);font-size:1rem;line-height:1.6;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid rgba(201,164,74,0.08)}
 
-/* Sub-abas de categoria dos Documentos */
+/* Seletor de capítulos (trava progressiva) */
+.chap-nav{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem}
+.chap-btn{font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.06em;padding:0.45rem 0.9rem;border-radius:6px;border:1px solid rgba(201,164,74,0.18);background:transparent;color:var(--text-dim);cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:0.4rem}
+.chap-btn:hover:not(.locked){border-color:var(--accent);color:var(--text)}
+.chap-btn.active{background:rgba(201,164,74,0.14);border-color:var(--accent);color:var(--accent)}
+.chap-btn.locked{opacity:0.5;cursor:not-allowed;border-style:dashed}
+.locked-msg{text-align:center;padding:3rem 1rem;color:var(--text-dim)}
+.locked-msg .lock-ic{font-size:2rem;opacity:0.5;margin-bottom:1rem}
+.locked-msg p{font-family:var(--font-body);font-style:italic;font-size:1.05rem;line-height:1.6}
+
+/* Categorias dos documentos */
 .cat-nav{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.4rem}
 .cat-btn{font-family:var(--font-ui);font-size:0.68rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.4rem 0.95rem;border-radius:20px;border:1px solid rgba(201,164,74,0.18);background:transparent;color:var(--text-dim);cursor:pointer;transition:all 0.25s}
 .cat-btn:hover{border-color:var(--accent);color:var(--text)}
 .cat-btn.active{background:rgba(201,164,74,0.14);border-color:var(--accent);color:var(--accent)}
 .cat-count{opacity:0.6;font-size:0.9em}
-
 .doc-grid{display:grid;grid-template-columns:1fr;gap:1rem}
 .doc-card{background:rgba(201,164,74,0.035);border:1px solid rgba(201,164,74,0.12);border-radius:8px;padding:1.15rem 1.25rem;transition:border-color 0.25s,transform 0.25s}
 .doc-card:hover{border-color:rgba(201,164,74,0.28);transform:translateY(-2px)}
@@ -158,19 +182,33 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .tag-artefato{background:rgba(180,140,50,0.16);color:#dcbf52;border:1px solid rgba(180,140,50,0.28)}
 .tag-misterio{background:rgba(180,60,60,0.16);color:#df8484;border:1px solid rgba(180,60,60,0.28)}
 
-/* ═══════════ MIND MAP ═══════════ */
+/* Mapa mental */
 .mindmap-wrap{width:100%}
 .mindmap-svg{width:100%;height:auto;display:block;touch-action:manipulation}
 .mm-line{stroke:rgba(201,164,74,0.22);stroke-width:1.2;fill:none}
 .mm-node{cursor:pointer}
-.mm-node circle{transition:filter 0.25s,r 0.25s}
+.mm-node circle{transition:filter 0.25s}
 .mm-node:hover circle{filter:brightness(1.35)}
 .mm-node.selected circle{filter:brightness(1.5)}
+.mm-node .answered-ring{fill:none;stroke-width:2.5}
 .mm-label{font-family:var(--font-ui);font-size:11px;fill:var(--text);pointer-events:none}
 .mm-info{margin-top:1.1rem;padding:1.1rem 1.2rem;background:rgba(201,164,74,0.045);border:1px solid rgba(201,164,74,0.14);border-radius:8px;min-height:52px}
 .mm-info h4{font-family:var(--font-display);color:var(--accent);font-size:0.95rem;margin-bottom:0.45rem}
-.mm-info p{font-family:var(--font-ui);font-size:0.82rem;color:#b4ae9f;line-height:1.65}
+.mm-info>p{font-family:var(--font-ui);font-size:0.82rem;color:#b4ae9f;line-height:1.65}
 .mm-info .placeholder{color:var(--text-dim);font-style:italic;font-family:var(--font-body);font-size:0.95rem}
+
+/* Controles de resposta das perguntas */
+.answer-block{margin-top:1rem;padding-top:0.9rem;border-top:1px solid rgba(201,164,74,0.1)}
+.answer-q{font-family:var(--font-ui);font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem}
+.answer-controls{display:flex;flex-wrap:wrap;gap:0.5rem}
+.ans-btn{font-family:var(--font-ui);font-size:0.72rem;padding:0.45rem 0.9rem;border-radius:6px;border:1px solid rgba(201,164,74,0.2);background:transparent;color:var(--text-dim);cursor:pointer;transition:all 0.2s}
+.ans-btn:hover{color:var(--text);border-color:var(--accent)}
+.ans-btn.sel-idea{background:rgba(180,140,50,0.18);border-color:#dcbf52;color:#dcbf52}
+.ans-btn.sel-known{background:rgba(60,140,80,0.18);border-color:#84cfa4;color:#84cfa4}
+.ans-btn.sel-noidea{background:rgba(120,90,160,0.18);border-color:#c2a5e6;color:#c2a5e6}
+.ans-feedback{margin-top:0.8rem;padding:0.8rem 1rem;border-radius:6px;font-family:var(--font-ui);font-size:0.8rem;line-height:1.6;background:rgba(201,164,74,0.05);border:1px solid rgba(201,164,74,0.14);color:#c4bdaa;display:none}
+.ans-feedback.show{display:block}
+.ans-feedback strong{color:var(--accent)}
 
 /* ═══════════ PROGRESS BAR ═══════════ */
 .progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent-dim),var(--accent));z-index:150;transition:width 0.1s;width:0%}
@@ -181,25 +219,17 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
   .reading-container{padding:0 1.25rem 4rem}
   .scene-section p{font-size:1.07rem}
   .music-player{bottom:1rem;right:1rem}
-  .modal{max-height:92vh;border-radius:8px}
+  .access-btn{bottom:1rem;left:1rem}
+  .modal{max-height:93vh;border-radius:8px}
   .modal-tab{padding:0.8rem 0.7rem;font-size:0.7rem}
-  .modal-body{padding:1.1rem 1.1rem}
+  .modal-body{padding:1rem 1.1rem}
 }
 </style>
 </head>
 <body>
 
 <div class="progress-bar" id="progressBar"></div>
-
-<!-- BACKGROUND LAYERS -->
-<div class="scene-bg bg-arrival active" data-bg="arrival"></div>
-<div class="scene-bg bg-tavern" data-bg="tavern"></div>
-<div class="scene-bg bg-brawl" data-bg="brawl"></div>
-<div class="scene-bg bg-bard" data-bg="bard"></div>
-<div class="scene-bg bg-after-song" data-bg="after-song"></div>
-<div class="scene-bg bg-morning" data-bg="morning"></div>
-<div class="scene-bg bg-battle" data-bg="battle"></div>
-<div class="scene-bg bg-aftermath" data-bg="aftermath"></div>
+<div id="bgContainer"></div>
 <div class="fog-layer"></div>
 
 <!-- HERO -->
@@ -208,31 +238,26 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
   <h1>O Chapéu de Merlim</h1>
   <p class="subtitle">Livro Um das Crônicas de Lovecraft</p>
   <p class="epigraph">"Bem-vindos, viajantes. Aqui começa sua aventura. Bem-vindos ao Chapéu de Merlim, a melhor taverna da cidade. E bem-vindos a Lovecraft."</p>
-  <a href="#chapter-1" class="enter-btn" id="enterBtn">Iniciar Leitura</a>
+  <a href="#book" class="enter-btn" id="enterBtn">Iniciar Leitura</a>
   <div class="scroll-hint">Role para ler ▾</div>
 </section>
 
-<!-- READING -->
-<div class="reading-container" id="readingArea">
-  <div class="chapter-header" id="chapter-1">
-    <span class="chapter-num">Capítulo Um</span>
-    <h2>O Chapéu de Merlim</h2>
-  </div>
+<!-- LEITURA -->
+<div class="reading-container" id="book">
   <div id="scenesContainer"></div>
-
-  <div class="chapter-end" id="chapterEnd" style="display:none">
-    <div class="end-ornament">⊰ Fim do Capítulo Um ⊱</div>
-    <p class="end-text">Próximo capítulo: as ruas de Lovecraft, a casa amarela do beco de Nur, e o que estava escrito no cartão do bardo.</p>
-    <button class="check-btn" id="checkBtn">✓ Concluir Capítulo</button>
-    <p class="unlock-hint">Ao concluir, você desbloqueia os documentos e o mapa mental deste capítulo.</p>
-  </div>
 </div>
 
-<!-- MUSIC PLAYER -->
+<!-- BOTÃO DE ACESSO AO ARQUIVO (durante a leitura) -->
+<div class="dock-btn access-btn" id="accessBtn" title="Arquivo — documentos e mapa mental">
+  <span>📜</span><span class="lbl">Arquivo</span>
+  <span class="badge" id="accessBadge" style="display:none">0</span>
+</div>
+
+<!-- MÚSICA -->
 <div class="music-player" id="musicPlayer">
   <button class="music-toggle" id="musicToggle" title="Ambientação musical">♪</button>
   <div class="music-controls">
-    <div class="music-label">Ambientação — Capítulo 1</div>
+    <div class="music-label" id="musicChapter">Ambientação</div>
     <div class="music-title" id="musicTitle">Nenhuma música definida</div>
     <div class="music-btns">
       <button id="playPauseBtn">▶ Tocar</button>
@@ -242,7 +267,7 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 </div>
 <div id="yt-player"></div>
 
-<!-- UNLOCK MODAL -->
+<!-- PAINEL (Arquivo) -->
 <div class="modal-overlay" id="unlockModal">
   <div class="modal">
     <div class="modal-header">
@@ -256,33 +281,32 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   CONFIG DO AUTOR  —  edite aqui, sem precisar mexer no resto
+   CONFIG DO AUTOR
+   ───────────────────────────────────────────────────────────────
+   • Música por capítulo: preencha "music" em cada capítulo (link YouTube).
+   • Imagens de fundo (arte pintada): preencha SCENE_IMAGES pelo id da cena.
+     Enquanto vazio, usa a atmosfera em CSS.
+   • Dica de releitura das perguntas: campo "rehint" em cada nó do mapa mental.
    ═══════════════════════════════════════════════════════════════ */
-
-// Link de música (YouTube) da ambientação deste capítulo.
-// Cole o link entre as aspas. Deixe "" para nenhum.
-const CHAPTER_MUSIC = "";
-
-// Imagens de fundo por cena (arte pintada).  Por enquanto vazio = usa a
-// atmosfera em CSS.  Quando tiver a arte, cole a URL da imagem (ou um
-// data:URI) ao lado do id da cena correspondente. Ex.:
-//   arrival: "https://.../taverna-neblina.jpg",
 const SCENE_IMAGES = {
-  arrival:     "",
-  tavern:      "",
-  brawl:       "",
-  bard:        "",
-  "after-song":"",
-  morning:     "",
-  battle:      "",
-  aftermath:   "",
+  // Capítulo 1
+  "c1-chegada":"", "c1-cartas":"", "c1-caos":"", "c1-bardo":"",
+  "c1-poscancao":"", "c1-manha":"", "c1-batalha":"", "c1-posbatalha":"",
+  // Capítulo 2
+  "c2-ruas":"", "c2-despertar":"", "c2-administracao":"", "c2-beco":"",
+  "c2-casa":"", "c2-bateria":"", "c2-criatura":"", "c2-sangue":"", "c2-final":"",
 };
 
 /* ═══════════════════════════════════════════════════════════════
-   CENAS DO CAPÍTULO 1  (texto integral do livro)
+   O LIVRO  —  array de capítulos (escala para o livro inteiro)
    ═══════════════════════════════════════════════════════════════ */
-const SCENES = [
-  { id:"arrival", label:"A Chegada", bg:"arrival", html:`
+const BOOK = [
+{
+  id:"ch1", num:"Capítulo Um", title:"O Chapéu de Merlim",
+  music:"",   // ← cole aqui o link de YouTube da ambientação do Cap. 1
+  endText:"Próximo capítulo: as ruas de Lovecraft, a casa amarela do beco de Nur, e o que estava escrito no cartão do bardo.",
+  scenes:[
+    { id:"c1-chegada", label:"A Chegada", bg:"arrival", html:`
 <p>O cheiro chegou antes da porta. Javali assado, gordura crepitando no espeto, e por baixo disso o bafo morno de cerveja barata e de madeira encharcada por gerações de canecas derramadas. Depois de três dias vivendo de promessas e bravura vazia, aquilo bastava para calar qualquer dúvida que ainda restasse.</p>
 <p>A taverna erguia-se no topo de um morro de grama amarelada, vigiando Lovecraft como uma sentinela cansada — e tinha, sem qualquer dúvida possível, o formato exato de um chapéu de bruxa. Na porta, uma placa mal pintada anunciava, com letras que mais pareciam rabiscadas por um bêbado de bom coração:</p>
 <p class="italic-text">Bem-vindos, viajantes. Aqui começa sua aventura. Bem-vindos ao Chapéu de Merlim, a melhor taverna da cidade. E bem-vindos a Lovecraft.</p>
@@ -297,8 +321,7 @@ const SCENES = [
 <p>Medeia, porém, não parecia impressionada.</p>
 <p>Não com as histórias. Não com a multidão. Não com nada.</p>
 <p>E isso — ele reconheceu, ainda sorrindo para a plateia que crescia — era mais interessante do que qualquer monstro que já tivesse enfrentado.</p>`},
-
-  { id:"tavern", label:"As Cartas", bg:"tavern", html:`
+    { id:"c1-cartas", label:"As Cartas", bg:"tavern", html:`
 <p>Do outro lado do salão, perto de uma mesa de jogo iluminada por uma lamparina enferrujada, Dolon fazia seu próprio tipo de truque.</p>
 <p>Sua bolsa, pendurada displicente no cinto, parecia vazia. Era proposital. Dentro, um saco de pano discreto já pesava com moedas de prata suficientes para comprar uma noite de sono decente em qualquer estalagem da cidade — e ele pretendia engordá-lo ainda mais antes de a noite terminar.</p>
 <p class="dialogue">— Ei, amigos... vim para disputar uma partida com vocês, hehe — disse, com um sorriso debochado que lutava, e perdia, contra um tom de voz forçadamente sóbrio.</p>
@@ -311,8 +334,7 @@ const SCENES = [
 <p>Dolon se levantou, a bolsa agora pesada e satisfeita, e começou a se afastar da mesa — até que um silêncio breve, estranho, tomou a taverna inteira.</p>
 <p>Foi quebrado por uma voz estridente, vinda de algum lugar perto do balcão:</p>
 <p class="dialogue">— Um ladrão nas cartas ali!!</p>`},
-
-  { id:"brawl", label:"O Caos e a Canção", bg:"brawl", html:`
+    { id:"c1-caos", label:"O Caos e a Canção", bg:"brawl", html:`
 <p>O caos foi imediato.</p>
 <p>Dolon se virou a tempo de ver os jogadores de pé, espumando, e ao lado deles — olhos vermelhos, qualquer resquício de controle já evaporado — um meio-orc apontando na direção errada com toda a certeza do mundo.</p>
 <p class="dialogue">— Seu bandido maldito! — rugiu. — Eu vou te mataaaar!</p>
@@ -343,43 +365,21 @@ const SCENES = [
 <p>Era a letra.</p>
 <p>A voz do bardo seguia macia, quase um embalo, enquanto as palavras desciam sobre o salão como se cada uma delas pesasse o dobro do que deveria:</p>
 <div class="song-lyrics">
-<p>Ouviram um chamado, lá no alto,</p>
-<p>vestiram-no de herói e de esperança —</p>
-<p>"venha lutar, seu povo chora",</p>
-<p>e ele foi, sem medir a distância.</p>
+<p>Ouviram um chamado, lá no alto,</p><p>vestiram-no de herói e de esperança —</p><p>"venha lutar, seu povo chora",</p><p>e ele foi, sem medir a distância.</p>
 <p class="stanza-gap"></p>
-<p>Não sabia que a glória prometida</p>
-<p>era a aposta de um trono indiferente,</p>
-<p>e a fera que o esperava na fronteira</p>
-<p>vestia luz, mas tinha fome ardente.</p>
+<p>Não sabia que a glória prometida</p><p>era a aposta de um trono indiferente,</p><p>e a fera que o esperava na fronteira</p><p>vestia luz, mas tinha fome ardente.</p>
 <p class="stanza-gap"></p>
-<p>Dorme, dorme, criança, não escute o vento,</p>
-<p>há um homem na colina que perdeu o nome,</p>
-<p>ele dançou com deuses numa noite só,</p>
-<p>e o que voltou já não tem mais a sua voz.</p>
+<p>Dorme, dorme, criança, não escute o vento,</p><p>há um homem na colina que perdeu o nome,</p><p>ele dançou com deuses numa noite só,</p><p>e o que voltou já não tem mais a sua voz.</p>
 <p class="stanza-gap"></p>
-<p>Dizem que venceu — venceu de fato,</p>
-<p>mas ninguém mais lembra o que ele venceu,</p>
-<p>seu nome foi riscado dos retratos,</p>
-<p>e o que sobrou, devagar, se perdeu.</p>
+<p>Dizem que venceu — venceu de fato,</p><p>mas ninguém mais lembra o que ele venceu,</p><p>seu nome foi riscado dos retratos,</p><p>e o que sobrou, devagar, se perdeu.</p>
 <p class="stanza-gap"></p>
-<p>Agora ronda solto pela mata,</p>
-<p>quando a lua, lá no alto, fecha os olhos,</p>
-<p>e quem cruza o caminho dele à noite</p>
-<p>não retorna pra contar os escolhos.</p>
+<p>Agora ronda solto pela mata,</p><p>quando a lua, lá no alto, fecha os olhos,</p><p>e quem cruza o caminho dele à noite</p><p>não retorna pra contar os escolhos.</p>
 <p class="stanza-gap"></p>
-<p>Dorme, dorme, criança, não escute o vento,</p>
-<p>há uma fera na colina que chora um lamento,</p>
-<p>ele dançou com deuses numa noite só,</p>
-<p>e ainda chora a vitória que lhe custou tudo.</p>
+<p>Dorme, dorme, criança, não escute o vento,</p><p>há uma fera na colina que chora um lamento,</p><p>ele dançou com deuses numa noite só,</p><p>e ainda chora a vitória que lhe custou tudo.</p>
 <p class="stanza-gap"></p>
-<p>Dizem que no fundo da clareira</p>
-<p>ainda se ouve um pranto sem razão —</p>
-<p>um homem que venceu até um deus,</p>
-<p>e perdeu, com a vitória, o coração.</p>
+<p>Dizem que no fundo da clareira</p><p>ainda se ouve um pranto sem razão —</p><p>um homem que venceu até um deus,</p><p>e perdeu, com a vitória, o coração.</p>
 </div>`},
-
-  { id:"bard", label:"O Bardo", bg:"bard", html:`
+    { id:"c1-bardo", label:"O Bardo", bg:"bard", html:`
 <p>Quando a última nota se desfez no ar, algo no salão pareceu se soltar.</p>
 <p>Os homens voltaram a rir. Dívidas antigas, frustrações guardadas, rancores que minutos antes tinham virado cadeiras voando — tudo isso pareceu evaporar, e em seu lugar sobrou só a vontade simples de beber mais uma rodada e contar mais uma piada. Dolon, ainda de pé entre os destroços, mal conseguia entender o que tinha acabado de acontecer.</p>
 <p>Medeia aproveitou o momento para tentar, de novo, sua sorte com Deimos — um sorriso de canto de boca, um comentário baixo que só ele deveria ouvir. Mas Deimos nem registrou. Seus olhos ainda estavam fixos no palco, no bardo, naquela aura estranha que continuava pairando no ar mesmo depois que a música cessou.</p>
@@ -397,8 +397,7 @@ const SCENES = [
 <p class="dialogue">— Prazer. Dolon.</p>
 <p>Medeia apertou a mão estendida.</p>
 <p class="dialogue">— Medeia.</p>`},
-
-  { id:"after-song", label:"Após a Canção", bg:"after-song", html:`
+    { id:"c1-poscancao", label:"Após a Canção", bg:"after-song", html:`
 <p class="dialogue">— Aquele bardo — disse Deimos, ainda com os olhos voltados para o palco vazio —, tenho certeza de que ele estava falando sobre a fera do cartaz.</p>
 <p>Medeia ergueu uma sobrancelha.</p>
 <p class="dialogue">— Fera do cartaz? — Inclinou a cabeça. — Desculpem, seu amigo aqui me distraiu e eu nem tive a chance de perguntar... o que vocês fazem por aqui, afinal?</p>
@@ -427,8 +426,7 @@ const SCENES = [
 <p>Deimos olhou para Dolon, estendido no chão, e depois para o canto da taverna, onde Roberto, o orc, estava sentado numa cadeira, encarando-o em silêncio.</p>
 <p class="dialogue">— Nha. — Riu. — Não é nada arriscado.</p>
 <p>Medeia decidiu acreditar nele. E o flerte entre os dois seguiu seu rumo — até que, em algum momento, ambos desapareceram juntos na direção do armazém da taverna.</p>`},
-
-  { id:"morning", label:"Manhã Seguinte", bg:"morning", html:`
+    { id:"c1-manha", label:"Manhã Seguinte", bg:"morning", html:`
 <p>As horas se passaram. Aos poucos, a taverna foi se esvaziando, até restarem apenas os destroços da noite e o silêncio do amanhecer. O sol subiu, penetrando pelas janelas em lâminas douradas de poeira.</p>
 <p>Deimos saiu da despensa se espreguiçando, ainda saboreando a noite intensa que tivera. Cabelos bagunçados, sorriso de canto de boca, o orgulho estampado de quem se considera um vencedor.</p>
 <p class="italic-text">Uma noite com uma bela mulher, um teto, comida e bebida — e não pagamos por absolutamente nada. Esses caras me devem a vida.</p>
@@ -493,8 +491,7 @@ const SCENES = [
 <p>Foi a brecha que Deimos precisava. Escapuliu pela passagem do balcão, juntando-se a Dolon. Os dois se encararam por um instante, depois se puseram em guarda, de costas quase coladas, encarando o cavaleiro furioso.</p>
 <p>E gritaram, juntos, a única pergunta que parecia importar naquele momento:</p>
 <p class="dialogue">— CADÊ A PORRA DO ROBERTO?!</p>`},
-
-  { id:"battle", label:"A Batalha", bg:"battle", html:`
+    { id:"c1-batalha", label:"A Batalha", bg:"battle", html:`
 <p>O cavaleiro avançou.</p>
 <p>Seus braços eram imensos, grossos como troncos de árvore, e ele os abriu numa tentativa de agarrar os dois de uma vez. Deimos e Dolon se jogaram para os lados, cada um numa direção. Não havia dúvida quanto ao que aconteceria se fossem alcançados: um golpe daqueles era morte certa.</p>
 <p class="dialogue">— Nossa — disse Dolon, rolando para longe —, nunca vi você desviar de um golpe na vida. Onde estão suas barreiras místicas e todo aquele seu repertório?</p>
@@ -546,8 +543,7 @@ const SCENES = [
 <p>Dolon suspirou de alívio. Deimos contemplou a cena, admirado.</p>
 <p>E Roberto, impassível como sempre, disse apenas:</p>
 <p class="dialogue">— Quero aquela manopla.</p>`},
-
-  { id:"aftermath", label:"Após a Batalha", bg:"aftermath", html:`
+    { id:"c1-posbatalha", label:"Após a Batalha", bg:"aftermath", html:`
 <p>Com o cavaleiro caído, eles se apressaram. Arrancaram cada peça da armadura, amarraram-no com tudo o que encontraram e lhe enfiaram uma mordaça na boca.</p>
 <p class="dialogue">— Onde você estava? — perguntou Deimos.</p>
 <p class="dialogue">— Fui procurar comida — respondeu Roberto. — Os dois meio-orcs comeram o resto da comida da taverna num desafio.</p>
@@ -582,130 +578,463 @@ const SCENES = [
 <p>Deimos pegou o cartão. No instante em que os dedos tocaram o papel, reconheceu-a: a mesma energia daquela noite, a mesma assinatura mágica dos olhos escarlates, agora condensada num pedaço de cartolina do tamanho da palma da mão.</p>
 <p class="dialogue">— Bem — disse, guardando-o —, leremos depois. Nosso amigo está morrendo, e temos uma Lovecraft inteira para explorar.</p>
 <p>E os dois saíram pela porta do bar, sob a luz pálida da manhã, em busca de recursos e de respostas — sem fazer ideia de que ambas as coisas os esperavam, e que nenhuma delas viria de graça.</p>`},
+  ],
+  docs:[
+    { category:"personagem", title:"Deimos — O Mago Viajante", body:"Carismático, manipulador, oportunista. Dono de um repertório mágico vasto — bolas de fogo, círculos de paralisia, runas de supressão, leitura de mentes ao toque, e até magia de sangue proibida. Fica severamente enfraquecido quando bêbado, o que acontece com frequência. Usa runas menores nos próprios companheiros “para ter paz e silêncio”." },
+    { category:"personagem", title:"Dolon — O Assassino", body:"Membro da Liga dos Assassinos. Mestre no blefe e nas cartas, combatente ágil com adaga e disparos. Capaz de estimular a própria adrenalina para ignorar ferimentos. Pragmático e leal, apesar das brigas constantes com Deimos. Termina o capítulo à beira da morte — uma costela perfurando o pulmão." },
+    { category:"personagem", title:"Roberto — O Orc", body:"Baixo, carrancudo, taciturno. Percepção extraordinária e força descomunal: nocauteou Aldric Thorne com um único soco. Não entrou na briga “porque não era dele” — lógica impecável. Ficou com a manopla do cavaleiro. Sua primeira fala de verdade no livro: “Quero aquela manopla.”" },
+    { category:"personagem", title:"Medeia — A Taverneira", body:"Olhos púrpura vívidos. Dona de fato do Chapéu de Merlim (mais do que Aldric). Não se impressiona com nada nem ninguém. Conhece o submundo de Lovecraft e sabe onde encontrar poções clandestinas. Ajuda os três — mas claramente esconde algo sobre si mesma." },
+    { category:"personagem", title:"Aldric Thorne — A Tempestade de Nornia", body:"O mais novo cavaleiro sagrado do rei. Parceiro de Medeia e dono “oficial” da taverna. Força e velocidade sobre-humanas, ódio que “não parecia inteiramente humano”. Portava uma manopla energizada capaz de gerar ondas de choque. Derrotado por Roberto e deixado amarrado e amordaçado na taverna." },
+    { category:"personagem", title:"O Bardo sem Nome", body:"Chega em meio ao caos, afina o instrumento e com três notas hipnotiza a taverna inteira. Seus olhos brilham num vermelho escarlate ao cruzarem com os de Deimos. Some sem deixar rastro, deixando apenas um cartão. Medeia diz que ele frequenta o bar — “mas nunca é tão performático”." },
+    { category:"local", title:"Lovecraft — A Cidade", body:"Cidade coberta por neblina constante, hostil aos estranhos. Dois marcos dominam o horizonte: a taverna no morro e a igreja. Palco de desaparecimentos recentes e de uma fera que espreita as florestas ao redor. Definitivamente não é uma cidade turística." },
+    { category:"local", title:"O Chapéu de Merlim — A Taverna", body:"No topo de um morro de grama amarelada, com o formato exato de um chapéu de bruxa. Melhor (e mais caótica) taverna da cidade. Ao fim do capítulo: completamente destruída por uma briga, uma canção enfeitiçada e uma batalha contra um cavaleiro do rei." },
+    { category:"artefato", title:"A Manopla de Thorne", body:"Manopla de combate de Aldric Thorne, agora com Roberto. Energiza golpes e amplifica a força a níveis brutais. O que ela é capaz de fazer nas mãos certas ainda é um mistério — Roberto mal começou a testá-la." },
+    { category:"artefato", title:"As Runas de Supressão de Deimos", body:"Pequenas pedras marcadas por uma runa vermelha. Enfraquecem a resistência mágica de quem as recebe — Deimos as usa nos próprios companheiros durante as viagens. Efeito colateral cruel: a vítima fica consciente, mas com o corpo imóvel, por horas." },
+    { category:"artefato", title:"O Cartaz da Recompensa", body:"Encontrado num acampamento vazio na floresta. Oferece dinheiro e um anel místico a quem capturar a fera que espreita as florestas de Lovecraft. Foi o que trouxe o grupo à cidade — e o que a canção do bardo parece descrever." },
+    { category:"artefato", title:"O Cartão do Bardo", body:"Deixado sobre o tamborete do palco vazio. Ao tocá-lo, Deimos reconhece a mesma assinatura mágica dos olhos escarlates, condensada num pedaço de cartolina. Guardado sem ser lido: “leremos depois”." },
+    { category:"misterio", title:"Quem é o bardo?", body:"Presença sobrenatural, olhos escarlates, capaz de hipnotizar um salão inteiro com três notas — e de poupar exatamente os três protagonistas. Aparece e some sem rastro. Amigo? Inimigo? Guia? Nada nele é acidental." },
+    { category:"misterio", title:"A Balada da Fera", body:"A canção conta a história de um homem que aceitou o chamado dos deuses, derrotou uma criatura celestial e voltou amaldiçoado: apagado da história, transformado numa fera que ronda a mata à noite. É a mesma fera do cartaz? E por que o bardo canta justamente isso, para justamente eles?" },
+    { category:"misterio", title:"O que Medeia esconde", body:"Olhos púrpura, imunidade total a encantos e histórias, conhecimento do submundo, calma diante de assassinos e magos. Ela ajuda o grupo sem pedir nada em troca óbvio. O que ela quer — e o que ela é — segue em aberto." },
+    { category:"misterio", title:"Os Desaparecimentos", body:"Medeia menciona que pessoas vêm sumindo em Lovecraft, mas “não imaginava que fosse uma fera”. A fera do cartaz, a balada e os sumiços parecem apontar para a mesma coisa — ou talvez para coisas diferentes que ninguém ainda conectou." },
+  ],
+  mindmap:{
+    nodes:[
+      { x:400, y:60,  r:30, label:"O Bardo",          color:"#b33a3a", desc:"Olhos escarlates, presença sobrenatural que hipnotiza toda a taverna com três notas. Poupa exatamente os três protagonistas. Some sem rastro, deixando só um cartão.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:180, y:150, r:24, label:"O Cartão",         color:"#c9a44a", desc:"Deixado no palco vazio. Carrega a mesma assinatura mágica dos olhos escarlates. Roberto o recuperou e entregou a Deimos — que ainda não o leu. O que está escrito nele?", rehint:"(o autor indicará o trecho para reler)" },
+      { x:620, y:150, r:26, label:"A Fera",           color:"#8b4a4a", desc:"A criatura do cartaz, procurada por recompensa e um anel místico. A balada a descreve como um homem amaldiçoado por derrotar um deus. Fera, criatura ou homem?", rehint:"(o autor indicará o trecho para reler)" },
+      { x:400, y:210, r:22, label:"A Balada",         color:"#a2506a", desc:"A canção enfeitiçada do bardo. Fala de glória, maldição e esquecimento. Ponte direta entre o bardo e a fera — cantada, de propósito, para os três.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:150, y:300, r:26, label:"Medeia",           color:"#7b4fa0", desc:"Olhos púrpura, imune a encantos, conhecedora do submundo. Ajuda sem pedir nada. Esconde alguma coisa — sobre a cidade, ou sobre si mesma.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:650, y:300, r:22, label:"Desaparecimentos", color:"#6a8b4a", desc:"Pessoas vêm sumindo em Lovecraft. Medeia não imaginava que fosse obra de uma fera. Ligados ao cartaz — ou a algo que ninguém ainda nomeou.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:400, y:340, r:20, label:"O Anel Místico",   color:"#8b6a4a", desc:"Parte da recompensa pela captura da fera. Por que um anel místico, especificamente? Quem oferece — e por quê, num acampamento abandonado?", rehint:"(o autor indicará o trecho para reler)" },
+    ],
+    links:[ [0,1],[0,3],[3,2],[2,5],[2,6],[0,4],[4,5] ],
+  },
+},
+{
+  id:"ch2", num:"Capítulo Dois", title:"As Ruas de Lovecraft",
+  music:"",   // ← cole aqui o link de YouTube da ambientação do Cap. 2
+  endText:"O capítulo termina aqui, por enquanto — a criatura de Hilda foi derrotada, mas Lovecraft mal começou a mostrar o que esconde. (continua...)",
+  scenes:[
+    { id:"c2-ruas", label:"As Ruas de Lovecraft", bg:"streets", html:`
+<p>A porta da taverna se fechou atrás deles, e Lovecraft os engoliu.</p>
+<p>De dia, a cidade não era menos macabra do que na noite anterior — era apenas macabra de outro jeito. As casas, feitas de pedras rústicas e madeira antiga, pareciam ter sido erguidas por mãos que já não existiam mais, e mantidas de pé pela pura teimosia de não saber como cair. Deimos notou algo estranho quase de imediato: o musgo. Havia uma quantidade absurda dele, cobrindo paredes, beirais e batentes como uma segunda pele — estranho, porque a cidade ficava relativamente afastada da floresta e consideravelmente longe do rio. Era como se Lovecraft se nutrisse apenas do solo em que fora plantada, sugando dele uma umidade que não deveria existir.</p>
+<p>Dois pontos da cidade se destacavam acima de tudo o resto. Atrás deles, no topo da colina de grama amarelada, o Chapéu de Merlim vigiava como uma sentinela deformada. E à direita, erguendo-se com uma imponência que destoava de tudo ao redor, estava a igreja — talvez a única construção da cidade que parecia ter sido terminada de verdade. Seus vitrais em vermelho-leve adornavam a fachada como feridas elegantes, trazendo ao lugar um clima místico que oscilava entre o sagrado e o perturbador. Definitivamente, Lovecraft não era uma cidade turística.</p>
+<p>Um véu de neblina cobria as ruas, trazendo ventos frios que pareciam sussurrar ao pé do ouvido e desaparecer antes de serem compreendidos. Os becos se abriam como bocas escuras — cada um deles parecia abrigar males prontos para arrastá-los a qualquer segundo. Os poucos moradores que cruzavam o caminho não cumprimentavam, não sorriam; desconfiavam até da própria sombra, e tratavam os dois estranhos com o mesmo entusiasmo que se reserva a uma praga.</p>
+<p>Mas havia algo pior do que a hostilidade dos habitantes.</p>
+<p>Algo que incomodava até Roberto — que não era sensível a magia.</p>
+<p>Eles estavam sendo observados. Não por uma pessoa, não por um animal. Por algo que via cada passo, ouvia cada som, e não fazia a menor questão de se esconder. Uma presença que pesava sobre os ombros como um olhar contínuo, e que parecia dizer, com uma clareza quase audível: <em>Vocês não estão seguros aqui. E eu gosto disso.</em></p>
+<p>Foi Roberto quem quebrou o silêncio.</p>
+<p class="dialogue">— Acha que temos que tomar cuidado com a balconista?</p>
+<p class="dialogue">— Não — respondeu Deimos. — Ela parece estar do nosso lado, mesmo escondendo alguma coisa. Está tão curiosa quanto nós.</p>
+<p>Seguiram caminhando, procurando qualquer indicação de nomes de ruas ou direções, até chegarem a um cruzamento onde as ruas se abriam em quatro caminhos distintos. Ali, fincada no centro como uma velha sentinela de madeira podre, havia uma placa direcional — tábuas pregadas umas sobre as outras em ângulos diferentes, a tinta desbotada pelo tempo e pela umidade.</p>
+<p>A tábua mais alta, apontando para a esquerda, dizia em letras escuras quase ilegíveis: <em>Administração — Prefeitura de Lovecraft</em>. Abaixo, uma seta para a frente indicava <em>Portão Principal — Saída para as Estradas do Leste</em>, e logo abaixo, apontando para trás de onde tinham vindo, outra dizia <em>Colina do Chapéu — Taverna e Alojamentos</em>. A última tábua, apontando para a direita, trazia as palavras <em>Igreja de Lovecraft — Santuário e Cemitério</em>, com um pequeno símbolo entalhado na madeira que Deimos não reconheceu de imediato.</p>
+<p>Deimos ficou parado diante da placa por um tempo longo demais.</p>
+<p>Era estranho. Ele olhava para a seta que dizia "saída" e tentava se lembrar de como tinha chegado — por onde tinha entrado, que caminho tinha percorrido — e a memória embaçava, como se alguém tivesse passado um pano úmido sobre ela no exato momento em que cruzou os limites da cidade. Sabia que tinha vindo da floresta. Sabia que tinha seguido uma trilha. Mas os detalhes se desfaziam quando tentava alcançá-los, e isso o incomodava mais do que gostaria de admitir.</p>
+<p>Roberto, por sua vez, ainda tinha os sentidos apurados — conseguia sentir os aromas dos seres da floresta além dos muros, ouvir o sangue correndo dentro dos cervos que espreitavam entre as árvores. Seus olhos percorreram a placa e ele disse:</p>
+<p class="dialogue">— Precisamos de mais informações sobre a cidade para encontrar a rua certa. Nos centros de administração, onde ficam os lordes, costumam ter guias e informativos para viajantes e aventureiros. Pode ter um mapa com as ruas.</p>
+<p>Deimos demorou para assimilar. Sua mente vagava longe, ainda remetendo àqueles olhos carmesim. Mas ouviu a última frase de Roberto e, genuinamente, achou uma boa ideia.</p>
+<p class="dialogue">— Ótimo. Foi uma sacada impressionante.</p>
+<p class="dialogue">— Você fala como se fosse surpreendente eu ter boas ideias.</p>
+<p class="dialogue">— É que normalmente elas se resumem a explodir alguém com um soco. Mas beleza — vamos para a administração da cidade.</p>
+<p>E os dois viraram à esquerda, desaparecendo na neblina.</p>`},
+    { id:"c2-despertar", label:"O Despertar de Dolon", bg:"confession", html:`
+<p>Dolon acordou lentamente.</p>
+<p>Estava deitado numa cama improvisada de trapos, e a primeira coisa que percebeu — antes mesmo de abrir os olhos — foi que não conseguia respirar sem se afogar. A visão veio embaçada, tremendo nas bordas, e cada tentativa de puxar ar trazia junto um gosto quente e metálico que lhe enchia a garganta.</p>
+<p>Medeia se aproximou.</p>
+<p class="dialogue">— Ei. Descanse. Seus amigos foram buscar algo que vai te ajudar.</p>
+<p>Dolon tentou responder. A dor era tanta que cada palavra precisava ser arrancada do fundo da garganta, travada entre o sangue e os urros que ele lutava para conter.</p>
+<p class="dialogue">— Aperta... as cordas.</p>
+<p>Saiu num suspiro fraco, quase inaudível, afogado no próprio sangue. Mas Medeia entendeu.</p>
+<p>Olhou para Thorne.</p>
+<p>O cavaleiro estava com a cabeça baixa, o olhar forçadamente desviado para o chão — como uma criança pega no meio de uma travessura. Medeia caminhou até ele e verificou as cordas.</p>
+<p>Estavam frouxas. Levemente soltas — o suficiente para serem rompidas em poucas tentativas.</p>
+<p>Estranho. Ela mesma tinha visto Roberto amarrá-lo, e o orc não era o tipo de criatura que deixava nós mal feitos. Analisou mais de perto e entendeu: Thorne tinha quebrado o próprio polegar. Deliberadamente. Sem emitir um único som, sem uma reclamação sequer — tinha fraturado o osso para que a mão coubesse por entre as amarras e começasse a soltá-las.</p>
+<p>Medeia apertou as cordas e olhou para ele com algo entre admiração e horror.</p>
+<p>Thorne ergueu a cabeça. Seus olhos não tinham perdido nada da fúria de antes — se muito, tinham ganhado algo pior: a calma fria de quem já decidiu exatamente o que vai fazer.</p>
+<p class="dialogue">— Vocês vão morrer — disse, a voz rouca e contida pela mordaça que Medeia tinha afrouxado para verificar a mandíbula quebrada. — Sou um cavaleiro do rei. E você, Medeia, é uma megera traidora. Será a primeira a perder a cabeça. — Fez uma pausa. — Repense. Veja como melhorei a taverna. Como te protegi. Por que está do lado desses loucos invasores?</p>
+<p>Medeia não respondeu de imediato.</p>
+<p>Caminhou devagar até ele, inclinou-se, e encostou os lábios no ouvido do cavaleiro. Sussurrou algo que Dolon, do outro lado da sala, não conseguiu ouvir.</p>
+<p>Do leito de trapos, com a visão já se apagando nas bordas, Dolon viu apenas fragmentos: Medeia se afastando de Thorne; o cavaleiro, pela primeira vez desde que entrara naquela taverna, em completo silêncio; e então — ofuscando tudo o mais — um brilho roxo, breve e intenso, que emanou das mãos de Medeia como a pulsação de uma estrela agonizante.</p>
+<p>O brilho o cegou por um instante. Quando se dissipou, a escuridão o engoliu de vez, e Dolon desmaiou.</p>`},
+    { id:"c2-administracao", label:"A Administração e o Mapa", bg:"admin", html:`
+<p>A administração ficava num patamar mais elevado que o restante da cidade — não muito, mas o suficiente para que a intenção fosse clara. As casas ali eram maiores, com mais detalhes entalhados na madeira, reforços de ferro nas vigas e adornos de vidro nas janelas. Lovecraft seguia a lógica de qualquer outra cidade: os nobres que controlam a plebe, separados e levemente acima dela. Um centro espiritual e religioso. Uma casa de entretenimento. Tudo nos seus devidos lugares — exceto que tudo ali parecia ter sido montado quinhentos anos atrás e simplesmente deixado como estava, sem que ninguém se desse ao trabalho de atualizar.</p>
+<p class="dialogue">— Uma área de nobres — observou Deimos, olhando ao redor. — Se fosse em qualquer outro lugar, teria guardas e teríamos dificuldade em passar. Mas estamos em Lovecraft, amigo... aqui nada faz sentido.</p>
+<p>Roberto não respondeu de imediato. Seus olhos percorriam as ruas, as casas, os canteiros, com a atenção minuciosa de quem lê uma trilha na floresta.</p>
+<p class="dialogue">— A cidade é quase abandonada — disse, por fim. — Os poucos residentes vivem trancados em suas casas, à espreita, em plena tarde. As plantações têm frutos e vegetais resistentes a pragas e mudanças climáticas, além de muitos tubérculos — batatas, principalmente. Não vi muitos animais de criação, fora as criaturas para caça nos limites da cidade. — Fez uma pausa. — É como se estivesse vivendo uma catástrofe.</p>
+<p class="dialogue">— Ou se preparando para uma — completou Deimos.</p>
+<p>Encontraram o quadro de avisos da administração — uma estrutura de madeira pregada na parede de um edifício largo, com dezenas de papéis sobrepostos uns aos outros. Alguns eram recentes; outros, amarelados e frágeis, pareciam ter sido fixados ali antes de qualquer um dos dois ter nascido.</p>
+<p class="dialogue">— Nada mencionando a fera — disse Roberto, passando os olhos pelas missões.</p>
+<p class="dialogue">— Mas repara — respondeu Deimos, apontando para os papéis mais novos. — As missões para aventureiros são serviços comuns de homens camponeses. Transporte de cultivos. Caça. Consertos. Segurança. — Virou-se para Roberto. — Lembra que a Medeia disse que os homens da cidade estavam sumindo?</p>
+<p class="dialogue">— Isso explicaria o medo das pessoas de sair ou viver nas ruas. Talvez.</p>
+<p class="dialogue">— Não sei. — Deimos franziu a testa. — Isso aqui parece mais antigo. Não explicaria bem... todo o resto.</p>
+<p>Foi então que encontraram o mapa.</p>
+<p>Estava pregado no centro do mural, num pedaço de couro curtido, traçado a nanquim por uma mão firme e antiga. Lovecraft cabia inteira naquele retângulo de pele endurecida.</p>
+<p>Ao norte, o Portão do Peregrino — a boca da cidade, aberta para as Estradas do Leste. Ao sul, um segundo portão sem nome, riscado sobre o couro como quem anota algo que já não importa. Entre os dois, a cidade se espalhava sem ordem nem piedade.</p>
+<p>A oeste, a Colina do Chapéu e sua taverna absurda. A leste, o Cerro dos Lordes e a Casa da Administração — onde estavam agora. No vale entre ambos, tudo o que mantinha Lovecraft viva, ou pelo menos de pé: a Igreja de São Lázaro com seu campo de lápides tortas, a Feira das Cinzas, a Fonte da Praça, a Bigorna que Nunca Esfria, e as ruelas sem nome do Bairro das Portas Fechadas.</p>
+<p>Mais ao sul, onde as casas se apertavam e as ruas se estreitavam, o mapa escurecia — como se a tinta ali fosse mais grossa, ou o cartógrafo tivesse pressionado a pena com mais força. No canto inferior, quase fora da borda do couro, uma torre sem bandeira vigiava o nada junto à muralha norte.</p>
+<p>E sobre a igreja — apenas sobre a igreja — um símbolo que Deimos não reconheceu. Não era uma cruz. Não era uma runa. Era algo mais velho que ambas.</p>
+<p>Deimos ficou parado diante do mapa por mais tempo do que deveria. O símbolo na placa direcional. O mesmo símbolo aqui, sobre a igreja. Queria dizer algo. Ele sentia que queria dizer algo — mas o significado escorregava entre os dedos como areia molhada.</p>
+<p class="dialogue">— Ok — disse, forçando-se a voltar. — Agora sabemos para onde ir.</p>
+<p class="dialogue">— Melhor corrermos — disse Roberto. — Dolon não vai durar muito. E Aldric pode se levantar a qualquer momento.</p>
+<p>Deimos concordou. E os dois partiram daquela área, descendo de volta para o vale da cidade, rumo ao beco de Nur e à casa amarela.</p>`},
+    { id:"c2-beco", label:"O Beco de Nur", bg:"nur", html:`
+<p>Desceram pela Rua do Selo, passando perto da Igreja de São Lázaro. O arrepio veio da ponta dos pés até o topo da cabeça — rápido, involuntário, como se algo ali dentro soubesse que estavam passando e fizesse questão de cumprimentá-los. A neblina cobria a visão adiante, engolindo a rua metro a metro, mas seguiram avançando.</p>
+<p>Passaram pela Fonte da Praça — seca, surrada pelo tempo, com a pedra rachada e manchada do verde de uma água que já não corria há anos. Desceram mais uma rua e, finalmente, chegaram ao beco de Nur.</p>
+<p>O bairro era diferente do resto de Lovecraft. As casas eram mais simples, feitas de finas camadas de madeira já desgastada, amontoadas umas nas outras como se cada uma tentasse se encostar na vizinha para não cair. O musgo ali não era tão forte, mas a neblina se intensificava, grossa e baixa, preenchendo os espaços entre as paredes como se tivesse escolhido aquele lugar para morar. Os caminhos eram estreitos, tortos, criados mais pelo acidente das construções do que por planejamento — caminhar ali era uma tarefa difícil mesmo para quem conhecesse o beco, e eles não conheciam.</p>
+<p class="dialogue">— Mal enxergamos com essa neblina — disse Roberto, a mão instintivamente perto da manopla na cintura. — E as casas amontoadas dificultam ainda mais. Eu não queria dizer nada, mas se a sua namorada preparou uma armadilha, esse é o lugar perfeito.</p>
+<p class="dialogue">— Você é muito ansioso, meu amigo — respondeu Deimos, sem diminuir o passo. — Uma noite não faz dela minha mulher. E um beco escuro não torna esse lugar uma armadilha.</p>
+<p>Caminharam mais alguns passos, e então a viram.</p>
+<p>Uma casa igual a todas as outras — pequena, humilde, com espaço apenas para o necessário — exceto por um detalhe: o telhado. Alguém o tinha pintado com uma tinta rústica amarela, aplicada de forma grosseira, provavelmente feita à mão com flores esmagadas. A tinta já tinha sido absorvida pela madeira, fixando a cor de um modo que tornava impossível ignorá-la. No meio daquela neblina cinzenta e daquelas casas sem vida, o telhado amarelo era como um farol discreto para quem soubesse o que procurar.</p>
+<p class="dialogue">— Ok — disse Deimos. — Acho que chegamos.</p>
+<p class="dialogue">— Estranhamente fácil — observou Roberto.</p>
+<p class="dialogue">— Trouxe as armaduras?</p>
+<p class="dialogue">— O quê? Do que está falando?</p>
+<p class="dialogue">— A armadura do cavaleiro. Achei que venderíamos para pagar a poção.</p>
+<p class="dialogue">— Não.</p>
+<p class="dialogue">— Você tem moedas, então?</p>
+<p class="dialogue">— Como eu teria moedas? Você não pegou a bolsa de moedas do Dolon?</p>
+<p class="dialogue">— Por que eu roubaria um homem desmaiado?</p>
+<p class="dialogue">— E como pretende pagar essa poção?</p>
+<p class="dialogue">— Daremos um jeito. Não temos tempo de discutir bobagens.</p>
+<p>Roberto o encarou por um instante — o tipo de olhar que, vindo de um orc, costuma encerrar discussões. Mas não disse mais nada.</p>
+<p>Aproximou-se da porta e bateu três vezes, num ritmo específico, exatamente como Medeia tinha demonstrado.</p>
+<p>A porta emitiu um leve brilho — um sinal rúnico, breve, desenhando-se na madeira como se sempre tivesse estado ali, esperando as batidas certas para acordar — e se abriu.</p>`},
+    { id:"c2-casa", label:"A Casa Amarela", bg:"shop", html:`
+<p>Do outro lado, uma sala. Consideravelmente menor do que a casa sugeria por fora, como se as paredes tivessem se contraído para guardar seus segredos mais perto do peito. O ar era denso, carregado de cheiros que não combinavam entre si — ervas secas, cera queimada, algo metálico e algo doce —, e a escuridão lá dentro tinha uma qualidade diferente da escuridão do beco: era proposital, cultivada, quase acolhedora na sua macabra sobriedade.</p>
+<p>Uma figura se materializou na penumbra.</p>
+<p>Era uma mulher — velha, baixa, curvada sobre si mesma como uma árvore que desistiu de crescer. Seus cabelos, de um branco prateado que não tinha nada a ver com a idade, caíam sobre os ombros como fios de arame gastos. Sua pele era enrugada de um jeito que não correspondia ao tempo: não era o envelhecimento natural de quem viveu décadas demais, mas algo acelerado, como se o próprio corpo estivesse pagando uma conta que não era dele.</p>
+<p>Deimos a reconheceu de imediato. Uma bruxa menor.</p>
+<p>Bruxas eram filhas de pais demônios e mães humanas — e sua natureza, seu poder e sua aparência dependiam inteiramente de quão alto o pai ocupava na hierarquia infernal. As menores, como aquela ali, eram filhas de demônios de baixo escalão: criaturas traiçoeiras, dadas a promessas distorcidas e barganhas que sempre pendiam para o lado delas. Marcadas pelo cabelo branco ou prateado que aparecia logo depois da adolescência e por um envelhecimento cruel que as consumia rápido demais.</p>
+<p>Havia outras — Deimos sabia, porque era o tipo de coisa que um mago com milhares de tabernas no currículo acabava aprendendo. As bruxas intermediárias, filhas de demônios de média patente, eram outra história: beleza vívida, cabelos escuros, reservas imensas de poder e um envelhecimento tão retardado que podiam chegar aos cem anos sem aparentar. Raras, perigosas, capazes de convocar familiares e provocar distúrbios em hierarquias antigas do inferno.</p>
+<p>E acima dessas, num patamar que beirava o mito, as bruxas maiores — filhas de generais do inferno, demônios que detinham poder real no submundo. Poucas tinham sido documentadas na história. Eram marcadas por uma beleza que transbordava, quase infinita, e cabelos da cor de fogo alaranjado, frequentemente confundidos com misturas raciais. Seus estoques de magia eram comparados a fenômenos da natureza, e seu domínio sobre ela era puro e particular — diferente do que qualquer mago poderia alcançar.</p>
+<p>E depois, havia Morgana. A única bruxa de classe especial já registrada — filha de um demônio tão peculiar que não cabia em nenhuma das categorias anteriores. Controlava, segundo os registros mais confiáveis que Deimos já tinha consultado, um reino inteiro nas margens da terra, majoritariamente feminino, constituído por bruxas que respondiam apenas a ela.</p>
+<p>Mas ali, naquela cabana no beco de Nur, o que os encarava era apenas uma bruxa menor. Traiçoeira por natureza, mas — com algum cuidado — negociável.</p>
+<p>A velha se aproximou, examinando os dois com olhos que pareciam farejar mais do que ver.</p>
+<p class="dialogue">— Não são daqui — disse, a voz rouca e direta. — Sinto o cheiro de vocês. E sei disso.</p>
+<p class="dialogue">— Bem — respondeu Deimos, com a naturalidade de quem já viu demais para se impressionar com pouco —, eu deveria imaginar que uma loja clandestina de poções seria tocada por uma bruxa menor.</p>
+<p class="dialogue">— Sua amiga? — perguntou Roberto, num tom que não era exatamente uma pergunta.</p>
+<p class="dialogue">— Essa coisinha feia, traiçoeira, sem caráter, nojenta e sem o menor senso de escrúpulo?</p>
+<p>As palavras saíram antes que Deimos pudesse controlá-las — ou talvez não quisesse controlá-las. Mas na fração de segundo seguinte, a razão o alcançou. Ele precisava daquela bruxa. Precisava da poção. E bruxas menores eram vaidosas o bastante para que uma mudança brusca de tom funcionasse como chave.</p>
+<p class="dialogue">— Como ousa! — continuou, sem perder o ritmo, a voz subindo numa indignação teatral. — Você é tudo isso mesmo! E por pensar que eu poderia ser amigo de uma beldade dessas...</p>
+<p>Disse alto o suficiente para que Hilda ouvisse. Ela ouviu — e, apesar de tudo, desacreditou.</p>
+<p>Deimos seguiu.</p>
+<p class="dialogue">— Ó, minha beldade, eu sempre pensei que as bruxas maiores fossem apenas lendas. Diga-me, minha rainha — pintou os cabelos para se disfarçar diante desses humanos podres? Ó, sua beleza é realmente sem tamanho.</p>
+<p>Tomou-lhe a mão e a beijou.</p>
+<p>Nesse instante, no contato entre seus lábios e a pele enrugada, Deimos ativou — com a discrição de quem faz isso há anos — uma magia de leitura de mentes. Infiltrou-se rápido e limpo, como quem abre uma porta que ninguém trancou: o nome veio primeiro. <em>Hilda Waldenburg.</em> Comum como um João da Silva. Depois, fragmentos: a loja, o medo, as fogueiras, as pedras atiradas.</p>
+<p class="dialogue">— Ouvi histórias sobre seu nome — disse, soltando a mão dela. — Hilda, a mulher mais bonita de Nornia. Uma divindade da beleza que caminha entre os homens.</p>
+<p>Hilda o encarou.</p>
+<p class="dialogue">— Ok, chega de bajulação — disse, tentando manter a compostura, mas sem conseguir esconder inteiramente que, no fundo, nunca ninguém havia dito aquilo para ela. — Digam o que querem e quem os mandou.</p>
+<p class="dialogue">— Não ouse — respondeu Deimos, recuando como se tivesse sido esfaqueado. — Não ouse desacreditar do meu amor à primeira vista por você.</p>
+<p class="dialogue">— Sério?</p>
+<p>Era uma sensação nova. As palavras dele pareciam verdadeiras, mas beiravam o absurdo. Hilda não estava acostumada a elogios — sua experiência com humanos se resumia, na maioria das vezes, a tentativas de mandá-la para a fogueira ou a apedrejamentos nos becos que costumava frequentar.</p>
+<p>Roberto se inclinou na direção de Deimos.</p>
+<p class="dialogue">— O que você está fazendo? — sussurrou.</p>
+<p>Deimos desferiu um tapa forte no rosto do orc.</p>
+<p class="dialogue">— Não ouse, criatura ridícula! — disse, erguendo a voz. — Já está com um ponto negativo pela desonra a essa bela mulher. Ponha-se no seu lugar, servo.</p>
+<p class="dialogue">— Servo? — disseram Hilda e Roberto ao mesmo tempo.</p>
+<p>Hilda ficou impressionada. Não era um homem qualquer. Era um mago, aparentemente nobre, com um servo orc — devia ser poderoso, importante, e estava encantado com a beleza dela. Era quase um sonho.</p>
+<p>Deimos se aproximou de Roberto e sussurrou, rápido e baixo:</p>
+<p class="dialogue">— Quando eu der o sinal, cai no chão e faz como o Deimos em Valmir Dajahir. O mestre da forja, quando demos laxante de troll e folhas de fogo pra ele comer e roubamos as flechas místicas pra matar o cervo raro.</p>
+<p class="dialogue">— Por que eu? — protestou Roberto, também sussurrando. — Eu não vou faz—</p>
+<p>Deimos lhe deu uma rasteira. Roberto caiu e bateu a cabeça com força no chão. Sem escolha — e com raiva o suficiente para tornar a atuação quase desnecessária —, começou a tremer.</p>
+<p class="dialogue">— Oh, meu Deus! — exclamou Deimos, ajoelhando-se ao lado do orc com uma expressão de desespero que merecia aplausos. — A doença está piorando!</p>
+<p class="dialogue">— Doença? — Hilda se aproximou, preocupada. — O que esse verme verde tem, meu xuxu?</p>
+<p class="dialogue">— Uma doença rara, meu amor. Ele é propriedade da família há gerações. Vim numa jornada para tentar achar uma cura, ou meu pai me puniria — e eu nunca mais poderia te ver.</p>
+<p>Hilda não pensou duas vezes. Bruxas menores tinham conhecimento limitado sobre magias avançadas — seu entendimento não ia muito além de poções e unguentos, e o tremor de Roberto era convincente o bastante.</p>
+<p class="dialogue">— Não há nada que uma poção de cura maior não possa resolver.</p>
+<p class="dialogue">— Não tenho comigo, meu amor — lamentou Deimos. — Nosso reino carece de magia em poções. Uma bruxa poderosa como você seria um divisor de águas em nossa cultura.</p>
+<p>Hilda não hesitou. Correu para trás das cortinas no fundo da loja e voltou com uma garrafa rosada, reluzente, e a entregou nas mãos de Deimos.</p>
+<p class="dialogue">— Faça ele beber, meu amor. E cure esse fardo.</p>
+<p class="dialogue">— Obrigado, minha rainha.</p>
+<p>Deimos fingiu dar a poção a Roberto, inclinando a garrafa com cuidado para que o líquido mal tocasse os lábios do orc. Hilda observou — algo nela desconfiou por um instante —, mas o amor já a tinha cegado o suficiente.</p>
+<p>Roberto se levantou, sério e duro como sempre.</p>
+<p class="dialogue">— Ó, meu Deus — disse Deimos, radiante. — Ele está vivo! Obrigado, meu amor, você nos salvou. Eu te amo.</p>
+<p>E cobriu o rosto enrugado de Hilda com uma série de beijos que exigiam mais coragem do que a maioria dos combates que já enfrentara.</p>
+<p class="dialogue">— Agora ficaremos juntos até a morte, meu amor — declarou Hilda, inclinando-se para beijá-lo na boca.</p>
+<p>Deimos se afastou — rápido, mas com elegância.</p>
+<p class="dialogue">— Claro, meu amor. Mas antes preciso entregar o orc ao meu pai, o nobre rico. Não quero mais carregar esse fardo, e a viagem é perigosa demais para você ir. Mas voltarei, e viveremos juntos para sempre.</p>
+<p class="dialogue">— Claro, meu amor — concordou Hilda, os olhos já brilhando com planos de casamento. — Faça o que for necessário para nos casarmos e eu ser uma princesa ao seu lado. — Fez uma pausa e abriu um sorriso largo. — Para ajudar na jornada, pegue o item ou a poção que desejar. Para se lembrar de mim na viagem.</p>`},
+    { id:"c2-bateria", label:"A Bateria", bg:"explosion", html:`
+<p>Deimos estava orgulhoso. Seu plano tinha funcionado. Anos de paquera e lábia haviam, enfim, dado resultado prático.</p>
+<p>Passeou pela loja, olhando as prateleiras atulhadas de frascos, raízes secas e artefatos de origem duvidosa, até que algo no fundo chamou sua atenção: uma caixa de vidro coberta por um pano longo, cor de vinho.</p>
+<p class="dialogue">— O que é isso?</p>
+<p class="dialogue">— Isso é um presente, querido — respondeu Hilda, com um orgulho que não combinava com o que estava por baixo do pano. — Ajudei um cavaleiro negro há muito tempo e pedi um favor em troca. Ele me concedeu. Pedi um artefato que pudesse fazer <em>isto</em>.</p>
+<p>Hilda puxou o pano.</p>
+<p>Dentro do vidro havia uma mulher.</p>
+<p>Usava algo semelhante a uma coleira — um artefato de metal negro que circundava o pescoço com runas gravadas. Hilda abaixou o selo que abria o vidro, e Deimos segurou a mulher, que desabou em seus braços. Seus cabelos eram negros, os olhos de um azul quase irreal, o corpo esguio, a beleza — inegável, silenciosa, do tipo que não precisa de nenhum elogio para ser notada.</p>
+<p>Uma bruxa intermediária. Presa. Usada como bateria.</p>
+<p>Hilda ativou a coleira, e a bruxa gritou — um som curto, abafado, como se já não tivesse forças para gritar de verdade. Hilda puxou a coleira, causando mais dor.</p>
+<p class="dialogue">— Essa é minha bateria, meu pet. Poderia ficar na nossa sala quando nos casarmos.</p>
+<p>Roberto se aproximou de Deimos e disse, baixo:</p>
+<p class="dialogue">— Não faça isso.</p>
+<p class="dialogue">— Ela está presa — respondeu Deimos.</p>
+<p class="dialogue">— Estamos desgastados. E não é problema nosso.</p>
+<p class="dialogue">— Eu não estragaria a missão, já bem-sucedida, por uma mulher qualquer.</p>
+<p>Roberto se aliviou. Por um segundo.</p>
+<p>Até que a frase se completou na cabeça dele:</p>
+<p class="italic-text">...eu não arriscaria a missão por uma mulher qualquer. Mas essa é uma mulher bonita.</p>
+<p class="dialogue">— Droga — disse Roberto.</p>
+<p class="dialogue">— Bola de fogo.</p>
+<p>A esfera que saiu de seus dedos não tinha nada a ver com o peteleco patético da manhã. Era ardente, densa, furiosa — e cruzou a sala em direção a Hilda como se carregasse uma vingança pessoal.</p>
+<p>Atingiu a bruxa em cheio. E, ao se espalhar, encontrou o que precisava para virar catástrofe: dezenas de poções instáveis, empilhadas nas prateleiras, frascos que nunca deveriam estar tão perto uns dos outros. A cabana inteira explodiu numa bola de fogo e fumaça que arremessou os três para fora, direto nas ruas do beco de Nur.</p>
+<p>Deimos usou o próprio corpo para proteger a bruxa dos destroços — sentiu as costas arderem, os estilhaços cravarem, e algo quente e úmido começar a escorrer pelo lado esquerdo do torso. Roberto se encolheu, absorvendo os danos com a resistência que só um orc conhece.</p>
+<p class="dialogue">— Tá legal? — perguntou Roberto, se levantando.</p>
+<p class="dialogue">— Tô ótimo, meu bom amigo — respondeu Deimos, que não estava nem perto de ótimo.</p>
+<p>A bruxa intermediária, nos braços dele, parecia bem — não apresentava nenhum ferimento, nem da explosão, nem de antes. Como se algo a protegesse por dentro.</p>
+<p class="dialogue">— A explosão nos deu uma vantagem — disse Deimos, levantando-se com dificuldade. — Mas ela vai vir com tudo.</p>
+<p>Agiu rápido: puxou algumas notas de sua bolsa — papéis marcados com runas, preparados para momentos como aquele — e as posicionou de forma estratégica ao redor dos escombros da cabana, quase formando um perímetro. Depois, recuou e se preparou.</p>
+<p>Roberto segurava a moça.</p>
+<p>Do meio dos destroços, Hilda se ergueu.</p>
+<p class="dialogue">— Como você ousa — rosnou, a voz já não era mais dela. — Você vem até minha loja, arruína meus negócios, me engana e quer levar o meu brinquedo. Não vou deixar.</p>
+<p>O corpo da bruxa começou a se contorcer. A pele se partiu em rachaduras negras, como um vaso que não aguenta mais a pressão de dentro. Uma energia escura, densa e viva, emanou de cada fenda, e Hilda começou a se transformar.</p>
+<p>Seis pernas se projetaram do tronco deformado — afiadas, articuladas como as de um inseto colossal, feitas de osso enegrecido e tendões expostos. O pescoço se alongou até um comprimento grotesco, serpenteando no ar como uma cobra sem corpo, sustentando uma cabeça que já não era rosto: era sombra e sangue moldados numa máscara de fome, com mandíbulas que se abriam em ângulos que nenhuma anatomia deveria permitir. De suas costas, protuberâncias de carne endurecida brotavam como espinhos, gotejando uma substância viscosa que chiava ao tocar o chão.</p>
+<p>A criatura rugiu para o céu, e o chão tremeu sob os pés dos dois.</p>
+<p>Roberto e Deimos olharam para os lados. Sorte: ninguém nas ruas.</p>
+<p>Hilda partiu para o ataque, lançando-se em velocidade absurda na direção deles. E no instante exato em que tentou avançar, Deimos ativou os selos.</p>
+<p class="dialogue">— Parede de selamento simples!</p>
+<p>A criatura bateu de frente num muro de energia que se ergueu ao redor dela como uma jaula translúcida, vibrando com o impacto.</p>
+<p class="dialogue">— Puta merda — disse Deimos, genuinamente surpreso. — Funcionou mesmo.</p>
+<p class="dialogue">— Você usou uma magia que não sabia se ia funcionar? — perguntou Roberto.</p>
+<p class="dialogue">— Magias devem ser testadas em combate. Mas relaxa, é basicamente uma barreira simples projetada e com área amplificada pelos selos. Assim dá pra fazer uma prisão onde nada sai, mas...</p>
+<p>Deimos firmou os pés no chão, estendeu a mão, e disse:</p>
+<p class="dialogue">— FLASH.</p>
+<p>Um raio poderoso disparou de seus dedos, cruzou a barreira como se ela não existisse e perfurou o peito de Hilda, atravessando-a de lado a lado.</p>
+<p class="dialogue">— ...mas magias podem entrar — completou, ofegante.</p>
+<p>Hilda cambaleou. Por um instante, pareceu que ia cair. Mas então a bruxa nos braços de Roberto começou a gritar — e Hilda se recuperou, a ferida se fechando como se nunca tivesse existido.</p>
+<p>Deimos entendeu na hora.</p>
+<p class="dialogue">— Ela está usando a garota não só como bateria, mas como estoque de vida. Se matarmos Hilda, a garota morre junto. Droga.</p>
+<p>Hilda não deu tempo para planos. Disparou uma rajada de esferas negras contra a barreira e começou a bater com quatro pernas no muro de energia, que rachou como vidro sob pressão.</p>
+<p class="dialogue">— Droga, droga — murmurou Deimos. — A barreira vai ceder. Se eu me afastar, ela se desfaz e a Hilda fica livre pra nos atacar. Não tenho vigor suficiente pra disparar magias e desviar ao mesmo tempo. Mas se eu ficar e atacar, vou acabar matando a garota. Vou ter que lutar sozinho, usar os ataques do Roberto pra tomar distância e finalizar com um golpe só—</p>
+<p>Roberto colocou a bruxa nos braços de Deimos.</p>
+<p class="dialogue">— Não — disse Deimos. — Eu preciso que você leve ela. Não posso me afastar ou a barreira se desfaz, e se eu tentar matar a Hilda agora, a garota morre também.</p>
+<p class="dialogue">— Eu sei — disse Roberto. — Por isso você vai levá-la.</p>
+<p class="dialogue">— Impossível. Fora de cogitação. E a barreira?</p>
+<p class="dialogue">— Eu consigo lidar sozinho com a bruxa. — Roberto o encarou. — Leva a garota pra fora do alcance do artefato e torce pra funcionar. Porque eu vou matar essa bruxa.</p>
+<p>Deimos olhou nos olhos do orc. Viu convicção ali — firme, sem hesitação, sem bravata. O tipo de certeza que não precisa de palavras.</p>
+<p>Ele confiou no amigo.</p>
+<p class="dialogue">— Dessa vez vou te deixar com a diversão — disse, acomodando a bruxa nos braços. — E vou levar a garota.</p>
+<p>Começou a se afastar, correndo. A barreira tremeu.</p>
+<p class="dialogue">— EI, DEIMOS! — gritou Roberto, sem se virar. — Você me deve uma.</p>
+<p class="dialogue">— E pagarei minha dívida, amigo!</p>
+<p>Deimos sumiu na neblina.</p>`},
+    { id:"c2-criatura", label:"Roberto e a Criatura", bg:"beco", html:`
+<p>Roberto firmou os pés no solo. Torceu o pescoço — o estalo ecoou no beco vazio.</p>
+<p>Vestiu a manopla direita. A manopla de Aldric Thorne.</p>
+<p class="dialogue">— Esse vai ser um bom treino pro meu brinquedo novo.</p>
+<p>A energia começou a percorrer seu corpo. As pedras do chão se racharam sob a pressão de seus pés.</p>
+<p>A criatura rugiu, e a barreira se estilhaçou.</p>
+<p>Era a oportunidade perfeita.</p>
+<p>Roberto não esperou. Suas pernas dispararam contra a poeira, e a distância entre eles sumiu antes que a criatura pudesse reagir.</p>
+<p>O primeiro soco acertou em cheio a lateral do pescoço serpenteante — a manopla rasgando escamas e carne enegrecida num só golpe, expondo algo que pulsava por baixo, escuro e viscoso, como se a própria sombra tivesse veias. Osso estalou. A criatura guinou pra trás, um esguicho de sangue negro cortando o ar e salpicando o rosto de Roberto.</p>
+<p class="italic-text">Isso não é sangue de bicho normal, pensou ele, o gosto metálico entrando pela boca entreaberta.</p>
+<p>Não importava. Roberto avançou de novo — um soco seco, encaixado de baixo pra cima no queixo da criatura, carregado com toda a força que a manopla conseguia amplificar. O impacto arrancou Hilda do chão e a arremessou metros atrás, atravessando um barraco de madeira fina que se desfez ao redor dela como papel molhado.</p>
+<p>A poeira subiu. Os destroços se espalharam. E, no meio deles — meio coberto por tábuas partidas e estilhaços de telha —, Roberto viu algo que não devia estar ali.</p>
+<p>Um corpo. Dilacerado. Um morador do beco, talvez, que não tinha saído a tempo, ou que nunca tivera pra onde ir. O rosto ainda era reconhecível — e isso era o pior de tudo, porque significava que tinha sido uma pessoa até poucos segundos atrás.</p>
+<p>O golpe foi dele. A consequência, também.</p>
+<p>Roberto travou. Por um instante — curto, mas longo o bastante para custar caro —, o mundo se estreitou até aquele corpo nos escombros, e tudo o mais deixou de existir.</p>
+<p>A criatura não perdeu a chance. Já se recuperando da pancada, Hilda girou com a velocidade brutal de algo que não sente dor e cravou as garras no ombro esquerdo de Roberto, dilacerando carne e músculo num único rasgo limpo. Roberto foi lançado para trás, o sangue — seu, desta vez, vermelho — espirrando quente contra a pedra.</p>
+<p>Hilda não ficou para rematar. Virou-se e correu, tentando se afastar — recuperar sua bateria, a bruxa que já não estava mais ali. Mas Roberto, mesmo ferido, mesmo abalado, agarrou uma das pernas traseiras da criatura e a puxou de volta.</p>
+<p>O que ele não esperava era que, em vez de tentar fugir de novo, ela atacasse diretamente.</p>
+<p>Hilda girou o corpo com uma velocidade absurda pra uma criatura daquele tamanho — e as seis pernas de osso, afiadas como lanças, vieram todas de uma vez, um leque de pontas negras convergindo pro tronco dele.</p>
+<p>O ataque veio rápido demais pra desviar. Roberto sentiu o instante exato em que soube que não ia conseguir escapar — e foi nesse instante que a manopla explodiu em luz.</p>
+<p>Não foi decisão. Foi reflexo puro, adrenalina disparando por um caminho que nem ele sabia que existia dentro dele — e por uma fração de segundo Roberto deixou de ser carne, virou relâmpago, um risco branco-azulado cortando o ar com um estalo seco que ecoou pelo beco inteiro.</p>
+<p>As seis pernas atravessaram o vazio onde ele estivera.</p>
+<p>Quando a luz se apagou, Roberto já estava de pé atrás da criatura, a poucos metros, o coração martelando tão forte que doía nas costelas. O gosto de metal e ozônio na boca. As mãos tremendo de leve — não de medo, mas do próprio poder que acabara de atravessar seu corpo sem pedir permissão.</p>
+<p>Hilda ainda virava a cabeça deformada pra frente, buscando um alvo que não estava mais lá.</p>
+<p>Roberto não hesitou. As mãos — a da manopla e a nua — cravaram na carne enegrecida das costas da criatura, os dedos afundando através de escamas, músculo, algo que estalava como cartilagem quebrando.</p>
+<p>E ele puxou.</p>
+<p>O som que saiu dali não tinha nome — um rasgo úmido, longo, entrecortado pelo estalo seco de costelas ou coisa parecida se partindo uma a uma, enquanto a carne cedia em duas metades irregulares. Sangue negro jorrou quente sobre os braços de Roberto, escorrendo até o cotovelo, pingando no chão de pedra com um som que parecia chuva. Um cheiro de enxofre e carne queimada subiu junto, grudando na garganta.</p>
+<p class="italic-text">É mais fácil do que devia ser, pensou ele, num lampejo frio que sumiu tão rápido quanto veio.</p>
+<p>A criatura arqueou o corpo partido num espasmo, um guincho agudo escapando de algo que já não parecia mais boca. As seis pernas se contraíram, arranhando o chão em espasmos desconexos — o corpo ainda tentando obedecer a um cérebro que talvez já não estivesse mais lá.</p>
+<p>Roberto soltou o corpo.</p>
+<p>Ele caiu pesado, as duas metades se afastando um pouco no impacto, escorregando na poça negra que já se espalhava pelo chão de pedra. As pernas de osso deram mais dois ou três espasmos — cada vez mais fracos, mais espaçados — até que pareceu, por um instante, que tinha acabado.</p>
+<p>Roberto deu um passo pra trás, o peito subindo e descendo rápido demais, o sangue negro escorrendo grosso pelos dedos da manopla, pingando no chão junto com o seu próprio, vermelho, vindo do corte aberto no ombro.</p>
+<p>Mal tinha começado a se virar quando um zumbido baixo começou a crescer atrás dele.</p>
+<p>Um círculo negro se formava no ar, espelhado embaixo do corpo partido da Hilda, ambos girando devagar, riscados de símbolos que Roberto não reconhecia. Raios finos e escuros saltavam entre os dois círculos, açoitando o cadáver — e a carne, impossivelmente, começou a se mover de novo. A fechar.</p>
+<p class="dialogue">— Ah, não — murmurou Roberto, virando de volta, os punhos se erguendo mesmo exaustos.</p>`},
+    { id:"c2-sangue", label:"Magia de Sangue", bg:"bloodmagic", html:`
+<p>Deimos corria.</p>
+<p>Subiu a colina na direção do Chapéu de Merlim, os pulmões queimando, o sangramento no lado esquerdo piorando a cada passada, a bruxa intermediária nos braços. A neblina engolia o caminho atrás dele, apagando seus rastros como se a própria cidade quisesse que ele nunca tivesse estado ali.</p>
+<p>A meio caminho, a garota se contorceu nos seus braços e gritou — um grito fino, quebrado, que não parecia mais preso à inconsciência. Deimos sentiu o corpo dela convulsionar, os olhos azuis se abrindo por um instante, vidrados de dor, antes de fechar de novo.</p>
+<p class="dialogue">— Aguenta — disse ele, sem fôlego pra dizer mais nada, e correu mais rápido.</p>
+<p>Quando finalmente atravessou a porta do Chapéu de Merlim, as pernas quase cederam. Colocou a garota no chão com o cuidado que ainda conseguiu reunir, ajoelhando ao lado dela.</p>
+<p class="dialogue">— Não tenho energia — disse, mais pra si mesmo do que pra qualquer outra pessoa. — Não vai ter jeito. Não do jeito certo.</p>
+<p>Olhou pra própria mão por um segundo. Depois levou os dedos à boca e cortou o indicador com os próprios dentes, um fio de sangue escorrendo imediato.</p>
+<p>Com o dedo cortado, desenhou símbolos na testa da garota — traços rápidos, precisos, algo claramente decorado, praticado, guardado num canto da memória que ele raramente precisava usar. Recitou palavras baixas, numa língua que não soava como nenhuma das que já tinha usado até então.</p>
+<p class="dialogue">— Desculpa — disse, antes de pressionar a palma da mão contra a testa dela.</p>
+<p>Um brilho forte, quase branco, explodiu dos dois corpos ao mesmo tempo.</p>
+<p>Medeia tinha saído por um instante — só um instante, pra checar Aldric amarrado e Dolon respirando fraco no canto — e quando voltou, a cena já estava em curso. Deimos mal tinha atravessado a porta. Não havia tempo pra aquilo ter se armado tão rápido.</p>
+<p>Uma esfera negra envolveu os dois corpos, Deimos e a garota, selando-os dentro de uma bolha que engolia a luz ao redor.</p>
+<p>Medeia parou na soleira, o corpo travado.</p>
+<p>Ela não temia Deimos. Não tinha motivo — um mago bêbado, flertador, hábil com fogo e raios, perigoso do jeito que qualquer aventureiro é perigoso. Não temia nenhum dos três, na verdade, por mais bagunça que tivessem trazido pro seu bar em menos de um dia.</p>
+<p>Mas aquilo ali, dentro daquela esfera negra — magia de sangue, proibida, rara o bastante pra a maioria dos magos nunca sequer ouvir falar dela em teoria — aquilo era outra coisa.</p>
+<p>Pela primeira vez desde que os três tinham entrado pela porta do Chapéu de Merlim, Medeia sentiu medo.</p>`},
+    { id:"c2-final", label:"A Bomba com Pernas", bg:"beco", html:`
+<p>De volta ao beco, o círculo negro parou.</p>
+<p>A carne que se fechava sobre o corpo partido de Hilda travou no meio do processo, como se algo tivesse cortado a corrente que alimentava o ritual. Metade reconstruída, metade ainda aberta, carne nova crescendo por cima de carne podre sem nunca terminar.</p>
+<p>Roberto respirou fundo, os punhos ainda erguidos.</p>
+<p class="dialogue">— Ok. Acho que o Deimos conseguiu — murmurou, a voz rouca. — Mas eu já tô sem energia, ferido... não sei quanto tempo eu aguento nisso.</p>
+<p>A criatura ficou de pé mesmo assim.</p>
+<p>Cambaleou na direção dele, a cabeça pendendo mole pro lado, as seis pernas se movendo com uma coordenação errada, como se algo estivesse puxando os fios de um boneco quebrado. Não parecia mais caçar. Não parecia nem consciente. Só andava — enquanto um zumbido baixo, elétrico, vinha de dentro do peito partido dela, crescendo a cada passo.</p>
+<p>Roberto deu dois passos pra trás, os olhos fixos na criatura, o corpo tenso mas parado. Sua percepção — a única coisa nele que nunca cansava, mesmo quando o resto do corpo implorava por descanso — começou a separar o zumbido em camadas.</p>
+<p>Não era um som constante. Pulsava. Crescia um pouco a cada passo cambaleante, como se cada movimento bombeasse mais energia pra dentro daquele corpo já rachado ao meio.</p>
+<p class="italic-text">Isso não é ela lutando, percebeu, o estômago apertando. Isso é ela enchendo.</p>
+<p>A carne meio reconstruída ao redor do peito partido brilhava agora, um fio de luz negra e vermelha correndo por baixo da pele podre, pulsando cada vez mais rápido — como um coração artificial disparado, bombeando rumo a alguma coisa que Roberto reconheceu tarde demais.</p>
+<p>Não era mais uma criatura tentando matá-lo.</p>
+<p>Era uma bomba com pernas.</p>
+<p>Ele não teve tempo de decidir o que fazer com essa informação. O corpo da Hilda — mais lento, sim, mas ainda rápido demais pra um Roberto exausto — cruzou a distância entre eles antes que qualquer plano terminasse de se formar.</p>
+<p>O impacto veio como um trem. Uma das pernas de osso, agora grossa e deformada pela reconstrução incompleta, acertou o peito de Roberto em cheio, e o mundo virou um borrão de pedra e neblina enquanto ele voava, atravessando o beco inteiro até bater contra a parede do outro lado. O ar saiu dos pulmões de uma vez. Sangue quente subiu pela garganta e ele cuspiu, um jato vermelho salpicando a pedra à sua frente.</p>
+<p>Ainda tonto, ainda tentando encher os pulmões de novo, ele viu a boca deformada da criatura se abrir — e vomitar.</p>
+<p>Esferas negras saíram em jorro, quicando pelo chão, algumas explodindo em contato com a pedra, outras atingindo o próprio Roberto em cheio no tronco. Onde tocaram, a pele começou a derreter — não queimar, <em>derreter</em>, escorrendo como cera negra, um cheiro de carne cozida e enxofre subindo junto com a dor mais funda que ele sentira a noite inteira.</p>
+<p class="italic-text">Isso é ruim, foi o único pensamento que conseguiu formar, a visão piscando nas bordas.</p>
+<p>Ele se forçou a se mover, arrastando-se pela pedra molhada de sangue — o dele, o negro da criatura, tudo misturado. Cada centímetro doía como se a pele arrancasse junto. Mas os olhos, mesmo turvos, continuavam fazendo o trabalho que sempre faziam bem: catalogando cada destroço espalhado pelo beco desde a explosão da cabana.</p>
+<p>Os dedos se fecharam ao redor de duas coisas ao mesmo tempo — a mão livre agarrando uma viga rachada da cabana, ainda comprida o bastante pra servir de lança improvisada, farpas de madeira se cravando na palma; a outra, com a manopla, erguendo um pedaço de pedra da parede desabada, grande e pesado, encaixando-o contra o antebraço como um escudo tosco.</p>
+<p>Ele se ergueu com as duas coisas, cambaleando, o peito ainda queimando onde as esferas tinham derretido a pele.</p>
+<p>A criatura já vinha de novo, o zumbido subindo de tom, mais alto agora, quase um guincho contínuo — como se o tempo estivesse acabando.</p>
+<p>Roberto arremessou a pedra com o pouco de força que ainda tinha nos ombros.</p>
+<p>Ela acertou a criatura bem no que sobrava do rosto, um estalo surdo de osso rachando, e por meio segundo — só meio segundo — o corpo cambaleou, o zumbido falhando como uma nota engasgada na garganta.</p>
+<p>Foi o suficiente.</p>
+<p>Roberto avançou com tudo o que restava nas pernas, a viga farpada na frente do corpo como uma lança, e cravou a ponta bem no centro do peito partido — ali onde a luz negra e vermelha pulsava mais forte, ali onde tudo aquilo estava se acumulando pra explodir.</p>
+<p>A madeira afundou fundo, atravessando o que sobrara de carne podre e osso rachado, e o zumbido virou um grito — agudo, elétrico, ensurdecedor — no instante em que a energia acumulada não teve mais pra onde ir e se despedaçou por dentro.</p>
+<p>A explosão jogou Roberto pra trás como um boneco de pano, o ar quente e ácido queimando o que restava de pele exposta, o som abafando tudo por um segundo interminável.</p>
+<p>Quando ele bateu no chão e a poeira baixou, só restava um círculo de cinzas negras onde a criatura estivera — e, no centro, a viga carbonizada, fincada na pedra, o único sinal de que ali tinha existido uma luta.</p>
+<p>Roberto ficou deitado, olhando a neblina girar devagar acima dele, o corpo inteiro gritando de dor.</p>
+<p>Mas ela estava morta. Dessa vez, de verdade.</p>`},
+  ],
+  docs:[
+    { category:"personagem", title:"Hilda Waldenburg — A Bruxa Menor", body:"Dona da loja clandestina de poções na casa amarela do beco de Nur. Filha de demônio de baixo escalão: cabelo prateado, envelhecimento cruel, natureza traiçoeira e vaidosa. Carente e faminta por afeto — o que Deimos explora sem piedade. Quando enganada e atacada, revela sua forma verdadeira: uma criatura de seis pernas de osso. Aparentemente morta ao fim do capítulo." },
+    { category:"personagem", title:"A Bruxa Aprisionada", body:"Uma bruxa intermediária — cabelos negros, olhos de um azul irreal, beleza silenciosa. Mantida por Hilda dentro de uma caixa de vidro, presa por uma coleira rúnica e usada como “bateria” e estoque de vida. Não se fere nem na explosão, como se algo a protegesse por dentro. Deimos a resgata e foge com ela." },
+    { category:"personagem", title:"Medeia (revelação)", body:"Sussurra algo no ouvido de Aldric e emite um brilho roxo das mãos — como “a pulsação de uma estrela agonizante”. Ao ver a magia de sangue de Deimos, sente medo pela primeira vez. Reconhece magia proibida de imediato: sabe mais sobre o oculto do que deixa transparecer." },
+    { category:"personagem", title:"Aldric Thorne (cativo)", body:"Amarrado na taverna, quebra o próprio polegar em silêncio para tentar se soltar das cordas. Frio, decidido, promete matar todos — e chama Medeia de “megera traidora”, revelando que a relação dos dois é bem mais complicada do que parecia." },
+    { category:"local", title:"Igreja de São Lázaro", body:"A única construção “terminada” de Lovecraft, com vitrais vermelho-leves como feridas elegantes. Sobre ela — e só sobre ela — paira um símbolo que não é cruz nem runa: “algo mais velho que ambas”. Passar perto dela arrepia o corpo inteiro." },
+    { category:"local", title:"O Mapa de Lovecraft", body:"Traçado a nanquim num couro antigo. Portão do Peregrino ao norte; um segundo portão sem nome, riscado, ao sul. Colina do Chapéu a oeste, Cerro dos Lordes a leste. No vale: a Feira das Cinzas, a Fonte da Praça, a Bigorna que Nunca Esfria e o Bairro das Portas Fechadas. Ao sul a tinta escurece; uma torre sem bandeira vigia junto à muralha." },
+    { category:"local", title:"Beco de Nur / A Casa Amarela", body:"Bairro de casas amontoadas e neblina espessa e baixa. A loja de Hilda tem telhado pintado de amarelo com flores esmagadas — um farol para quem sabe procurar. A porta abre com três batidas num ritmo específico, revelando um selo rúnico. Por dentro é menor do que aparenta." },
+    { category:"artefato", title:"A Coleira do Cavaleiro Negro", body:"Artefato de metal negro com runas gravadas, capaz de aprisionar e drenar uma bruxa intermediária, usando-a como bateria e reservatório de vida. Hilda diz tê-lo recebido de um “cavaleiro negro” em troca de um favor. Fere a vítima quando acionada." },
+    { category:"artefato", title:"A Manopla (novo poder)", body:"Na mão de Roberto, a manopla de Thorne revela mais do que força: sob adrenalina extrema, transforma o corpo em puro relâmpago por uma fração de segundo — uma esquiva-raio instantânea. Roberto a descobre por reflexo, sem sequer decidir usá-la." },
+    { category:"artefato", title:"As Notas Rúnicas de Selamento", body:"Papéis marcados com runas que Deimos carrega para emergências. Posicionados em perímetro, erguem uma “Parede de Selamento Simples” — uma jaula translúcida que prende o que está dentro, mas deixa passar magias de fora." },
+    { category:"misterio", title:"O Símbolo sobre a Igreja", body:"Aparece na placa direcional e no mapa, sempre sobre a Igreja de São Lázaro. Nem cruz, nem runa — algo mais antigo. Seu significado “escorrega entre os dedos” de Deimos, como se a cidade não deixasse que ele o compreendesse.", rehint:"(o autor indicará o trecho para reler)" },
+    { category:"misterio", title:"A Memória Embaçada de Deimos", body:"Ao tentar lembrar como entrou em Lovecraft, a mente de Deimos falha, “como se alguém tivesse passado um pano úmido sobre ela” ao cruzar os limites da cidade. A cidade parece interferir ativamente na memória de quem entra.", rehint:"(o autor indicará o trecho para reler)" },
+    { category:"misterio", title:"A Presença que Observa", body:"Algo vigia cada passo em Lovecraft sem se esconder — sentido até por Roberto, que não é sensível a magia. “Vocês não estão seguros aqui. E eu gosto disso.” Quem, ou o quê, observa a cidade inteira?", rehint:"(o autor indicará o trecho para reler)" },
+    { category:"misterio", title:"O Cavaleiro Negro", body:"Hilda recebeu a coleira de um “cavaleiro negro” em troca de um favor, há muito tempo. Quem é ele? Que interesse teria em fornecer um artefato capaz de escravizar bruxas — e a quantas Hildas espalhadas pelo mundo?", rehint:"(o autor indicará o trecho para reler)" },
+    { category:"misterio", title:"A Magia de Sangue de Deimos", body:"Encurralado, Deimos corta o próprio dedo, desenha símbolos na testa da garota e recita uma língua nunca antes usada — magia de sangue, proibida e rara. Fez Medeia sentir medo. O que Deimos realmente é, e onde aprendeu isso?", rehint:"(o autor indicará o trecho para reler)" },
+    { category:"misterio", title:"Morgana e a Hierarquia das Bruxas", body:"Menores (prata), intermediárias (cabelos negros), maiores (fogo alaranjado) — e Morgana, a única de “classe especial”, que comanda um reino de bruxas nas margens da terra. Onde Medeia, de olhos e brilho púrpura, se encaixa nessa hierarquia? Em nenhuma categoria conhecida.", rehint:"(o autor indicará o trecho para reler)" },
+  ],
+  mindmap:{
+    nodes:[
+      { x:400, y:55,  r:28, label:"O Símbolo",         color:"#b33a3a", desc:"Sobre a Igreja de São Lázaro, na placa e no mapa. Nem cruz, nem runa — algo mais velho. Seu sentido escapa a Deimos, como se a cidade o impedisse de entender.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:170, y:135, r:24, label:"Memória de Deimos", color:"#6a8b8b", desc:"A lembrança de como ele entrou em Lovecraft se apaga ao cruzar os limites da cidade. A cidade interfere na mente de quem chega.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:640, y:135, r:24, label:"A Presença",        color:"#5a7a5a", desc:"Vigia cada passo sem se esconder. Até Roberto, insensível a magia, sente. 'Vocês não estão seguros aqui. E eu gosto disso.'", rehint:"(o autor indicará o trecho para reler)" },
+      { x:150, y:290, r:26, label:"Cavaleiro Negro",   color:"#3a3a44", desc:"Deu a coleira a Hilda em troca de um favor. Fornece artefatos que escravizam bruxas. Quem é, e o que quer?", rehint:"(o autor indicará o trecho para reler)" },
+      { x:400, y:215, r:22, label:"A Coleira",         color:"#8b6a4a", desc:"Metal negro rúnico que aprisiona e drena a bruxa intermediária como bateria e estoque de vida. A ponte física entre o cavaleiro negro e Hilda.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:650, y:295, r:26, label:"Magia de Sangue",   color:"#b02038", desc:"Deimos usa magia de sangue proibida para salvar a garota. Fez Medeia sentir medo. O que ele é, e onde aprendeu isso?", rehint:"(o autor indicará o trecho para reler)" },
+      { x:400, y:345, r:24, label:"Medeia / Morgana",  color:"#7b4fa0", desc:"Brilho e olhos púrpura não cabem em nenhuma classe de bruxa (prata, negra, alaranjada). Reconhece magia proibida. Que relação tem com Morgana e seu reino de bruxas?", rehint:"(o autor indicará o trecho para reler)" },
+    ],
+    links:[ [0,1],[0,2],[4,3],[4,6],[5,6],[3,6],[0,4] ],
+  },
+},
+/*__CH2__*/
 ];
+/* ═══════════════════════════════════════════════════════════════
+   ESTADO (sessão apenas — sem login)
+   ═══════════════════════════════════════════════════════════════ */
+const completed = new Set();          // capítulos marcados como lidos
+const answers = {};                   // "chId:idx" -> 'idea' | 'known' | 'noidea'
+const chapterMusic = {};              // chId -> videoId  (da config ou do usuário)
+let currentChapterId = BOOK[0].id;    // capítulo sendo lido (pelo scroll)
+let panelChapter = null;              // capítulo aberto no painel
+let panelTab = 'docs';
+let panelCat = 'todos';
+
+BOOK.forEach(ch=>{ chapterMusic[ch.id] = extractVideoId(ch.music); });
 
 /* ═══════════════════════════════════════════════════════════════
-   DOCUMENTOS  —  organizados por categoria (sub-abas)
-   Adicione/edite livremente. category: personagem | local | artefato | misterio
+   RENDER — fundos + cenas + fins de capítulo
    ═══════════════════════════════════════════════════════════════ */
-const DOCS = [
-  { category:"personagem", title:"Deimos — O Mago Viajante", body:"Carismático, manipulador, oportunista. Dono de um repertório mágico vasto — bolas de fogo, círculos de paralisia, runas de supressão, leitura de mentes ao toque, e até magia de sangue proibida. Fica severamente enfraquecido quando bêbado, o que acontece com frequência. Usa runas menores nos próprios companheiros “para ter paz e silêncio”." },
-  { category:"personagem", title:"Dolon — O Assassino", body:"Membro da Liga dos Assassinos. Mestre no blefe e nas cartas, combatente ágil com adaga e disparos. Capaz de estimular a própria adrenalina para ignorar ferimentos. Pragmático e leal, apesar das brigas constantes com Deimos. Termina o capítulo à beira da morte — uma costela perfurando o pulmão." },
-  { category:"personagem", title:"Roberto — O Orc", body:"Baixo, carrancudo, taciturno. Percepção extraordinária e força descomunal: nocauteou Aldric Thorne com um único soco. Não entrou na briga “porque não era dele” — lógica impecável. Ficou com a manopla do cavaleiro. Sua primeira fala de verdade no livro: “Quero aquela manopla.”" },
-  { category:"personagem", title:"Medeia — A Taverneira", body:"Olhos púrpura vívidos. Dona de fato do Chapéu de Merlim (mais do que Aldric). Não se impressiona com nada nem ninguém. Conhece o submundo de Lovecraft e sabe onde encontrar poções clandestinas. Ajuda os três — mas claramente esconde algo sobre si mesma." },
-  { category:"personagem", title:"Aldric Thorne — A Tempestade de Nornia", body:"O mais novo cavaleiro sagrado do rei. Parceiro de Medeia e dono “oficial” da taverna. Força e velocidade sobre-humanas, ódio que “não parecia inteiramente humano”. Portava uma manopla energizada capaz de gerar ondas de choque. Derrotado por Roberto e deixado amarrado e amordaçado na taverna." },
-  { category:"personagem", title:"O Bardo sem Nome", body:"Chega em meio ao caos, afina o instrumento e com três notas hipnotiza a taverna inteira. Seus olhos brilham num vermelho escarlate ao cruzarem com os de Deimos. Some sem deixar rastro, deixando apenas um cartão. Medeia diz que ele frequenta o bar — “mas nunca é tão performático”." },
+const bgContainer = document.getElementById('bgContainer');
+const scenesContainer = document.getElementById('scenesContainer');
+let globalIndex = 0;
+let firstBgId = null;
 
-  { category:"local", title:"Lovecraft — A Cidade", body:"Cidade coberta por neblina constante, hostil aos estranhos. Dois marcos dominam o horizonte: a taverna no morro e a igreja. Palco de desaparecimentos recentes e de uma fera que espreita as florestas ao redor. Definitivamente não é uma cidade turística." },
-  { category:"local", title:"O Chapéu de Merlim — A Taverna", body:"No topo de um morro de grama amarelada, com o formato exato de um chapéu de bruxa. Melhor (e mais caótica) taverna da cidade. Ao fim do capítulo: completamente destruída por uma briga, uma canção enfeitiçada e uma batalha contra um cavaleiro do rei." },
+BOOK.forEach((ch)=>{
+  // Cabeçalho do capítulo
+  const header = document.createElement('div');
+  header.className = 'chapter-header';
+  header.id = ch.id;
+  header.innerHTML = `<span class="chapter-num">${ch.num}</span><h2>${ch.title}</h2>`;
+  scenesContainer.appendChild(header);
 
-  { category:"artefato", title:"A Manopla de Thorne", body:"Manopla de combate de Aldric Thorne, agora com Roberto. Energiza golpes e amplifica a força a níveis brutais. O que ela é capaz de fazer nas mãos certas ainda é um mistério — Roberto mal começou a testá-la." },
-  { category:"artefato", title:"As Runas de Supressão de Deimos", body:"Pequenas pedras marcadas por uma runa vermelha. Enfraquecem a resistência mágica de quem as recebe — Deimos as usa nos próprios companheiros durante as viagens. Efeito colateral cruel: a vítima fica consciente, mas com o corpo imóvel, por horas." },
-  { category:"artefato", title:"O Cartaz da Recompensa", body:"Encontrado num acampamento vazio na floresta. Oferece dinheiro e um anel místico a quem capturar a fera que espreita as florestas de Lovecraft. Foi o que trouxe o grupo à cidade — e o que a canção do bardo parece descrever." },
-  { category:"artefato", title:"O Cartão do Bardo", body:"Deixado sobre o tamborete do palco vazio. Ao tocá-lo, Deimos reconhece a mesma assinatura mágica dos olhos escarlates, condensada num pedaço de cartolina. Guardado sem ser lido: “leremos depois”." },
+  ch.scenes.forEach((scene, i)=>{
+    if(firstBgId===null) firstBgId = scene.id;
+    // Camada de fundo dedicada a esta cena
+    const bg = document.createElement('div');
+    bg.className = 'scene-bg bg-' + scene.bg + (scene.id===firstBgId ? ' active' : '');
+    bg.dataset.bg = scene.id;
+    if(SCENE_IMAGES[scene.id]) bg.style.backgroundImage = `url("${SCENE_IMAGES[scene.id]}")`;
+    bgContainer.appendChild(bg);
 
-  { category:"misterio", title:"Quem é o bardo?", body:"Presença sobrenatural, olhos escarlates, capaz de hipnotizar um salão inteiro com três notas — e de imunizar (ou poupar) exatamente os três protagonistas. Aparece e some sem rastro. Amigo? Inimigo? Guia? Nada nele é acidental." },
-  { category:"misterio", title:"A Balada da Fera", body:"A canção conta a história de um homem que aceitou o chamado dos deuses, derrotou uma criatura celestial e voltou amaldiçoado: apagado da história, transformado numa fera que ronda a mata à noite. É a mesma fera do cartaz? E por que o bardo canta justamente isso, para justamente eles?" },
-  { category:"misterio", title:"O que Medeia esconde", body:"Olhos púrpura, imunidade total a encantos e histórias, conhecimento do submundo, calma diante de assassinos e magos. Ela ajuda o grupo sem pedir nada em troca óbvio. O que ela quer — e o que ela é — segue em aberto." },
-  { category:"misterio", title:"Os Desaparecimentos", body:"Medeia menciona que pessoas vêm sumindo em Lovecraft, mas “não imaginava que fosse uma fera”. A fera do cartaz, a balada e os sumiços parecem apontar para a mesma coisa — ou talvez para coisas diferentes que ninguém ainda conectou." },
-];
-
-/* ═══════════════════════════════════════════════════════════════
-   MAPA MENTAL  —  nós de mistério e suas conexões
-   ═══════════════════════════════════════════════════════════════ */
-const MM_NODES = [
-  { x:400, y:60,  r:30, label:"O Bardo",          color:"#b33a3a", desc:"Olhos escarlates, presença sobrenatural que hipnotiza toda a taverna com três notas. Poupa exatamente os três protagonistas. Some sem rastro, deixando só um cartão." },
-  { x:180, y:150, r:24, label:"O Cartão",         color:"#c9a44a", desc:"Deixado no palco vazio. Carrega a mesma assinatura mágica dos olhos escarlates. Roberto o recuperou e entregou a Deimos — que ainda não o leu. O que está escrito nele?" },
-  { x:620, y:150, r:26, label:"A Fera",           color:"#8b4a4a", desc:"A criatura do cartaz, procurada por recompensa e um anel místico. A balada a descreve como um homem amaldiçoado por derrotar um deus. Fera, criatura ou homem?" },
-  { x:400, y:210, r:22, label:"A Balada",         color:"#a2506a", desc:"A canção enfeitiçada do bardo. Fala de glória, maldição e esquecimento. Ponte direta entre o bardo e a fera — cantada, de propósito, para os três." },
-  { x:150, y:300, r:26, label:"Medeia",           color:"#7b4fa0", desc:"Olhos púrpura, imune a encantos, conhecedora do submundo. Ajuda sem pedir nada. Esconde alguma coisa — sobre a cidade, ou sobre si mesma." },
-  { x:650, y:300, r:22, label:"Desaparecimentos", color:"#6a8b4a", desc:"Pessoas vêm sumindo em Lovecraft. Medeia não imaginava que fosse obra de uma fera. Ligados ao cartaz — ou a algo que ninguém ainda nomeou." },
-  { x:400, y:340, r:20, label:"O Anel Místico",   color:"#8b6a4a", desc:"Parte da recompensa pela captura da fera. Por que um anel místico, especificamente? Quem oferece — e por quê, num acampamento abandonado?" },
-];
-const MM_LINKS = [ [0,1],[0,3],[3,2],[2,5],[2,6],[0,4],[4,5] ];
-
-/* ═══════════════════════════════════════════════════════════════
-   RENDERIZAÇÃO DAS CENAS + APLICAÇÃO DE IMAGENS DO AUTOR
-   ═══════════════════════════════════════════════════════════════ */
-(function applySceneImages(){
-  document.querySelectorAll('.scene-bg').forEach(el=>{
-    const id = el.dataset.bg;
-    const url = SCENE_IMAGES[id];
-    if(url){ el.style.backgroundImage = `url("${url}")`; }
+    // Bloco de texto da cena
+    const div = document.createElement('div');
+    div.className = 'scene-section';
+    div.dataset.bg = scene.id;
+    div.dataset.ch = ch.id;
+    div.dataset.scene = globalIndex++;
+    const divider = i>0 ? '<div class="scene-divider">· · ·</div>' : '';
+    div.innerHTML = divider + `<span class="scene-label">${scene.label}</span>` + scene.html;
+    scenesContainer.appendChild(div);
   });
-})();
 
-const container = document.getElementById('scenesContainer');
-SCENES.forEach((scene,i)=>{
-  const div = document.createElement('div');
-  div.className = 'scene-section';
-  div.dataset.bg = scene.bg;
-  div.dataset.sceneIndex = i;
-  const divider = i>0 ? '<div class="scene-divider">· · ·</div>' : '';
-  const label = `<span class="scene-label">${scene.label}</span>`;
-  div.innerHTML = divider + label + scene.html;
-  container.appendChild(div);
+  // Fim do capítulo
+  const end = document.createElement('div');
+  end.className = 'chapter-end';
+  end.innerHTML = `
+    <div class="end-ornament">⊰ Fim do ${ch.num} ⊱</div>
+    <p class="end-text">${ch.endText}</p>
+    <button class="check-btn" data-ch="${ch.id}">✓ Concluir ${ch.num}</button>
+    <p class="unlock-hint">Ao concluir, você desbloqueia os documentos e o mapa mental deste capítulo.</p>`;
+  scenesContainer.appendChild(end);
 });
 
-// Revela o "Fim do Capítulo" só depois que a última cena aparece
-const chapterEnd = document.getElementById('chapterEnd');
+const bgs = document.querySelectorAll('.scene-bg');
+let currentBg = firstBgId;
 
 /* ═══════════════════════════════════════════════════════════════
-   SCROLL: VISIBILIDADE DAS CENAS + TROCA DE FUNDO
+   OBSERVADORES — revelar cena, trocar fundo, seguir capítulo
    ═══════════════════════════════════════════════════════════════ */
-const sceneEls = document.querySelectorAll('.scene-section');
-const bgs = document.querySelectorAll('.scene-bg');
-let currentBg = 'arrival';
-
-// Observador 1: revela (fade-in) a cena assim que ela entra na tela.
-// threshold:0 garante que funciona mesmo para cenas mais altas que a viewport.
 const revealObs = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      // Última cena à vista → revela o fim do capítulo
-      if(Number(entry.target.dataset.sceneIndex) === SCENES.length-1){
-        chapterEnd.style.display = 'block';
-      }
-    }
-  });
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold:0, rootMargin:'0px 0px -10% 0px' });
 
-// Observador 2: o fundo acompanha a cena que estiver cruzando o centro da tela.
-// Uma faixa fina no meio (-45%/-45%) elege a cena "dominante" sem depender de área.
 const bgObs = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      const newBg = entry.target.dataset.bg;
-      if(newBg && newBg !== currentBg){
-        bgs.forEach(bg=>bg.classList.toggle('active', bg.dataset.bg===newBg));
-        currentBg = newBg;
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id = e.target.dataset.bg;
+      if(id && id!==currentBg){
+        bgs.forEach(b=>b.classList.toggle('active', b.dataset.bg===id));
+        currentBg = id;
       }
+      const chId = e.target.dataset.ch;
+      if(chId && chId!==currentChapterId){ setCurrentChapter(chId); }
     }
   });
 }, { threshold:0, rootMargin:'-45% 0px -45% 0px' });
 
-sceneEls.forEach(s=>{ revealObs.observe(s); bgObs.observe(s); });
+document.querySelectorAll('.scene-section').forEach(s=>{ revealObs.observe(s); bgObs.observe(s); });
 
-// Barra de progresso
 window.addEventListener('scroll', ()=>{
   const h = document.documentElement;
-  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressBar').style.width = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100 + '%';
 }, { passive:true });
 
-// Esconde o hero ao iniciar leitura
 document.getElementById('enterBtn').addEventListener('click', ()=>{
   const hero = document.getElementById('hero');
-  hero.style.opacity = '0';
+  hero.style.opacity='0';
   setTimeout(()=>{ hero.style.display='none'; }, 650);
 });
 
 /* ═══════════════════════════════════════════════════════════════
-   MÚSICA  —  YouTube IFrame API (só áudio, iframe escondido)
+   MÚSICA POR CAPÍTULO — YouTube (só áudio)
    ═══════════════════════════════════════════════════════════════ */
-let player = null, isPlaying = false, playerReady = false, pendingVideoId = null;
-let currentVideoId = extractVideoId(CHAPTER_MUSIC);
+let player=null, isPlaying=false, playerReady=false, pendingVideoId=null, loadedVideoId=null;
 
 function extractVideoId(url){
   if(!url) return null;
@@ -720,44 +1049,47 @@ document.head.appendChild(tag);
 window.onYouTubeIframeAPIReady = function(){
   player = new YT.Player('yt-player', {
     height:'1', width:'1',
-    videoId: currentVideoId || undefined,
     playerVars:{ autoplay:0, controls:0, playsinline:1 },
     events:{
-      onReady: ()=>{
-        playerReady = true;
-        if(pendingVideoId){ player.loadVideoById(pendingVideoId); pendingVideoId=null; }
-      },
-      onStateChange: (e)=>{
-        isPlaying = (e.data === YT.PlayerState.PLAYING);
-        updatePlayBtn();
-      }
+      onReady: ()=>{ playerReady=true; if(pendingVideoId){ doLoad(pendingVideoId); pendingVideoId=null; } },
+      onStateChange: (e)=>{ isPlaying = (e.data===YT.PlayerState.PLAYING); updatePlayBtn(); }
     }
   });
 };
 
-const musicTitle = document.getElementById('musicTitle');
-if(currentVideoId){ musicTitle.textContent = 'Ambientação do Capítulo 1'; }
+function doLoad(id){ loadedVideoId=id; player.loadVideoById(id); }
+
+function setCurrentChapter(chId){
+  currentChapterId = chId;
+  const ch = BOOK.find(c=>c.id===chId);
+  document.getElementById('musicChapter').textContent = 'Ambientação — ' + ch.num;
+  const vid = chapterMusic[chId];
+  document.getElementById('musicTitle').textContent = vid ? ('Ambientação de ' + ch.num) : 'Nenhuma música definida';
+  // Troca suave: se está tocando e o capítulo tem trilha própria diferente, acompanha
+  if(isPlaying && playerReady && vid && vid!==loadedVideoId){ doLoad(vid); }
+}
 
 document.getElementById('musicToggle').addEventListener('click', ()=>{
   document.getElementById('musicPlayer').classList.toggle('expanded');
 });
-
 document.getElementById('playPauseBtn').addEventListener('click', ()=>{
-  if(!currentVideoId){ promptMusic(); return; }
-  if(!player || !playerReady){ return; }
-  if(isPlaying){ player.pauseVideo(); } else { player.playVideo(); }
+  const vid = chapterMusic[currentChapterId];
+  if(!vid){ promptMusic(); return; }
+  if(!player || !playerReady){ pendingVideoId=vid; return; }
+  if(isPlaying){ player.pauseVideo(); }
+  else { if(loadedVideoId!==vid) doLoad(vid); else player.playVideo(); }
 });
-
 document.getElementById('changeMusicBtn').addEventListener('click', promptMusic);
 
 function promptMusic(){
-  const url = prompt('Cole o link do YouTube para a ambientação deste capítulo:', CHAPTER_MUSIC || '');
+  const ch = BOOK.find(c=>c.id===currentChapterId);
+  const url = prompt('Cole o link do YouTube para a ambientação de ' + ch.num + ':', ch.music || '');
   if(!url) return;
   const id = extractVideoId(url);
-  if(!id){ alert('Link inválido. Use um link do YouTube (youtube.com/watch?v=... ou youtu.be/...).'); return; }
-  currentVideoId = id;
-  musicTitle.textContent = 'Ambientação personalizada';
-  if(playerReady){ player.loadVideoById(id); } else { pendingVideoId = id; }
+  if(!id){ alert('Link inválido. Use um link do YouTube.'); return; }
+  chapterMusic[currentChapterId] = id;
+  document.getElementById('musicTitle').textContent = 'Ambientação de ' + ch.num;
+  if(playerReady){ doLoad(id); } else { pendingVideoId=id; }
 }
 
 function updatePlayBtn(){
@@ -766,120 +1098,191 @@ function updatePlayBtn(){
   btn.classList.toggle('active', isPlaying);
   document.getElementById('musicToggle').classList.toggle('playing', isPlaying);
 }
+setCurrentChapter(currentChapterId);
 
 /* ═══════════════════════════════════════════════════════════════
-   DESBLOQUEIO  —  botão de check → modal com abas
+   DESBLOQUEIO / TRAVA PROGRESSIVA
    ═══════════════════════════════════════════════════════════════ */
-let unlocked = false;
-let currentDocCategory = 'todos';
+const accessBadge = document.getElementById('accessBadge');
 
-const checkBtn = document.getElementById('checkBtn');
-checkBtn.addEventListener('click', ()=>{
-  if(!unlocked){
-    unlocked = true;
-    checkBtn.classList.add('completed');
-    checkBtn.textContent = '✓ Capítulo Concluído — Reabrir';
-  }
-  openModal();
+document.querySelectorAll('.check-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const chId = btn.dataset.ch;
+    if(!completed.has(chId)){
+      completed.add(chId);
+      btn.classList.add('completed');
+      const ch = BOOK.find(c=>c.id===chId);
+      btn.textContent = '✓ ' + ch.num + ' concluído — abrir arquivo';
+      updateBadge();
+    }
+    openPanel(chId);
+  });
 });
 
+function updateBadge(){
+  if(completed.size>0){ accessBadge.style.display='flex'; accessBadge.textContent = completed.size; }
+  else { accessBadge.style.display='none'; }
+}
+
+document.getElementById('accessBtn').addEventListener('click', ()=>openPanel());
+
+function latestUnlocked(){
+  let last=null;
+  BOOK.forEach(c=>{ if(completed.has(c.id)) last=c.id; });
+  return last;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PAINEL (Arquivo) — seletor de capítulos + abas
+   ═══════════════════════════════════════════════════════════════ */
 const modal = document.getElementById('unlockModal');
-document.getElementById('modalClose').addEventListener('click', closeModal);
-modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
-document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
-
+document.getElementById('modalClose').addEventListener('click', closePanel);
+modal.addEventListener('click', e=>{ if(e.target===modal) closePanel(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closePanel(); });
 document.querySelectorAll('.modal-tab').forEach(t=>{
-  t.addEventListener('click', ()=>switchTab(t.dataset.tab));
+  t.addEventListener('click', ()=>{ panelTab = t.dataset.tab; renderPanel(); });
 });
 
-function openModal(){
+function openPanel(chId){
+  panelChapter = (chId && completed.has(chId)) ? chId : latestUnlocked();
+  panelCat = 'todos';
+  panelTab = 'docs';
   modal.classList.add('open');
-  switchTab('docs');
+  renderPanel();
 }
-function closeModal(){ modal.classList.remove('open'); }
+function closePanel(){ modal.classList.remove('open'); }
 
-function switchTab(tab){
-  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===tab));
+function renderPanel(){
+  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===panelTab));
   const body = document.getElementById('modalBody');
-  body.innerHTML = (tab==='docs') ? renderDocs() : renderMindMap();
-  if(tab==='docs') wireDocs();
-  if(tab==='mindmap') wireMindMap();
+
+  // Seletor de capítulos (com cadeados)
+  const chapNav = '<div class="chap-nav">' + BOOK.map(c=>{
+    const unlocked = completed.has(c.id);
+    const active = c.id===panelChapter ? ' active' : '';
+    const locked = unlocked ? '' : ' locked';
+    const ic = unlocked ? '' : '🔒 ';
+    return `<button class="chap-btn${active}${locked}" data-ch="${c.id}" ${unlocked?'':'disabled'}>${ic}${c.num}</button>`;
+  }).join('') + '</div>';
+
+  if(!panelChapter){
+    body.innerHTML = chapNav + `
+      <div class="locked-msg">
+        <div class="lock-ic">🔒</div>
+        <p>Os arquivos ficam selados até você concluir um capítulo.<br>Role até o fim de um capítulo e toque em <em>“Concluir”</em> para desbloquear seus documentos e mistérios.</p>
+      </div>`;
+    wireChapNav();
+    return;
+  }
+
+  const ch = BOOK.find(c=>c.id===panelChapter);
+  body.innerHTML = chapNav + (panelTab==='docs' ? renderDocs(ch) : renderMindMap(ch));
+  wireChapNav();
+  if(panelTab==='docs') wireDocs(ch); else wireMindMap(ch);
+  body.scrollTop = 0;
 }
 
-/* ---------- DOCUMENTOS ---------- */
+function wireChapNav(){
+  document.querySelectorAll('.chap-btn:not(.locked)').forEach(b=>{
+    b.addEventListener('click', ()=>{ panelChapter=b.dataset.ch; panelCat='todos'; renderPanel(); });
+  });
+}
+
+/* ---------- Documentos por categoria ---------- */
 const CATS = [
-  { id:'todos',      label:'Todos' },
-  { id:'personagem', label:'Personagens' },
-  { id:'local',      label:'Locais' },
-  { id:'artefato',   label:'Itens & Artefatos' },
-  { id:'misterio',   label:'Mistérios' },
+  { id:'todos', label:'Todos' }, { id:'personagem', label:'Personagens' },
+  { id:'local', label:'Locais' }, { id:'artefato', label:'Itens & Artefatos' },
+  { id:'misterio', label:'Mistérios' },
 ];
 const TAG_LABEL = { personagem:'Personagem', local:'Local', artefato:'Artefato', misterio:'Mistério' };
 
-function renderDocs(){
+function renderDocs(ch){
   const nav = CATS.map(c=>{
-    const count = c.id==='todos' ? DOCS.length : DOCS.filter(d=>d.category===c.id).length;
-    const active = c.id===currentDocCategory ? ' active' : '';
-    return `<button class="cat-btn${active}" data-cat="${c.id}">${c.label} <span class="cat-count">${count}</span></button>`;
+    const count = c.id==='todos' ? ch.docs.length : ch.docs.filter(d=>d.category===c.id).length;
+    if(count===0 && c.id!=='todos') return '';
+    return `<button class="cat-btn${c.id===panelCat?' active':''}" data-cat="${c.id}">${c.label} <span class="cat-count">${count}</span></button>`;
   }).join('');
-
-  const list = DOCS
-    .filter(d=> currentDocCategory==='todos' || d.category===currentDocCategory)
-    .map(d=>`
-      <div class="doc-card">
-        <span class="tag tag-${d.category}">${TAG_LABEL[d.category]}</span>
-        <h4>${d.title}</h4>
-        <p>${d.body}</p>
-      </div>`).join('');
-
-  return `
-    <p class="modal-intro">Documentos de referência revelados até aqui — personagens, lugares, itens e os mistérios que a trama deixou em aberto. Use as categorias para filtrar.</p>
-    <div class="cat-nav">${nav}</div>
-    <div class="doc-grid">${list}</div>`;
+  const list = ch.docs.filter(d=> panelCat==='todos' || d.category===panelCat).map(d=>`
+    <div class="doc-card">
+      <span class="tag tag-${d.category}">${TAG_LABEL[d.category]}</span>
+      <h4>${d.title}</h4><p>${d.body}</p>
+    </div>`).join('');
+  return `<p class="modal-intro">Documentos de ${ch.num} — personagens, lugares, itens e mistérios revelados até aqui. Filtre por categoria.</p>
+    <div class="cat-nav">${nav}</div><div class="doc-grid">${list}</div>`;
 }
-
-function wireDocs(){
-  document.querySelectorAll('.cat-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      currentDocCategory = btn.dataset.cat;
-      const body = document.getElementById('modalBody');
-      body.innerHTML = renderDocs();
-      wireDocs();
-      body.scrollTop = 0;
-    });
+function wireDocs(ch){
+  document.querySelectorAll('.cat-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{ panelCat=b.dataset.cat; renderPanel(); });
   });
 }
 
-/* ---------- MAPA MENTAL ---------- */
-function renderMindMap(){
+/* ---------- Mapa mental + perguntas com 3 estados ---------- */
+const ANS_RING = { idea:'#dcbf52', known:'#84cfa4', noidea:'#c2a5e6' };
+
+function renderMindMap(ch){
+  const N = ch.mindmap.nodes, L = ch.mindmap.links;
   let svg = `<svg viewBox="0 0 800 400" class="mindmap-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">`;
-  MM_LINKS.forEach(([a,b])=>{
-    svg += `<line class="mm-line" x1="${MM_NODES[a].x}" y1="${MM_NODES[a].y}" x2="${MM_NODES[b].x}" y2="${MM_NODES[b].y}"/>`;
-  });
-  MM_NODES.forEach((n,i)=>{
+  L.forEach(([a,b])=>{ svg += `<line class="mm-line" x1="${N[a].x}" y1="${N[a].y}" x2="${N[b].x}" y2="${N[b].y}"/>`; });
+  N.forEach((n,i)=>{
+    const ans = answers[panelChapter+':'+i];
+    const ring = ans ? `<circle class="answered-ring" cx="${n.x}" cy="${n.y}" r="${n.r+5}" stroke="${ANS_RING[ans]}"/>` : '';
     svg += `<g class="mm-node" data-node="${i}">
+      ${ring}
       <circle cx="${n.x}" cy="${n.y}" r="${n.r}" fill="${n.color}" opacity="0.72" stroke="${n.color}" stroke-width="2" stroke-opacity="0.45"/>
       <text class="mm-label" x="${n.x}" y="${n.y + n.r + 15}" text-anchor="middle">${n.label}</text>
     </g>`;
   });
   svg += `</svg>`;
-  return `
-    <p class="modal-intro">As perguntas em aberto da trama e como elas se conectam. Toque num ponto para ver a anotação. Novos nós e ligações surgem conforme a história avança.</p>
-    <div class="mindmap-wrap">
-      ${svg}
-      <div class="mm-info" id="mmInfo"><p class="placeholder">Toque em um ponto do mapa para revelar a anotação.</p></div>
-    </div>`;
+  return `<p class="modal-intro">As perguntas em aberto de ${ch.num} e como se conectam. Toque num ponto para ver a anotação e marcar o que você já descobriu.</p>
+    <div class="mindmap-wrap">${svg}<div class="mm-info" id="mmInfo"><p class="placeholder">Toque em um ponto do mapa para revelar a pergunta.</p></div></div>`;
 }
 
-function wireMindMap(){
+function wireMindMap(ch){
   document.querySelectorAll('.mm-node').forEach(g=>{
     g.addEventListener('click', ()=>{
       document.querySelectorAll('.mm-node').forEach(x=>x.classList.remove('selected'));
       g.classList.add('selected');
-      const n = MM_NODES[Number(g.dataset.node)];
-      document.getElementById('mmInfo').innerHTML = `<h4>${n.label}</h4><p>${n.desc}</p>`;
+      showNode(ch, Number(g.dataset.node));
     });
   });
+}
+
+function showNode(ch, i){
+  const n = ch.mindmap.nodes[i];
+  const key = panelChapter+':'+i;
+  const cur = answers[key];
+  const info = document.getElementById('mmInfo');
+  info.innerHTML = `<h4>${n.label}</h4><p>${n.desc}</p>
+    <div class="answer-block">
+      <div class="answer-q">O que você acha desta pergunta?</div>
+      <div class="answer-controls">
+        <button class="ans-btn ${cur==='idea'?'sel-idea':''}" data-a="idea">💡 Tenho uma ideia</button>
+        <button class="ans-btn ${cur==='known'?'sel-known':''}" data-a="known">✓ Já sei a resposta</button>
+        <button class="ans-btn ${cur==='noidea'?'sel-noidea':''}" data-a="noidea">🌫 Não faço ideia</button>
+      </div>
+      <div class="ans-feedback ${cur?'show':''}" id="ansFeedback">${cur?feedbackText(cur,n):''}</div>
+    </div>`;
+  info.querySelectorAll('.ans-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      answers[key] = b.dataset.a;
+      showNode(ch, i);                       // re-render estado do nó
+      const g = document.querySelector(`.mm-node[data-node="${i}"]`);
+      // adiciona o anel de "respondida" sem redesenhar o mapa todo
+      if(g && !g.querySelector('.answered-ring')){
+        const r = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        r.setAttribute('class','answered-ring'); r.setAttribute('cx',n.x); r.setAttribute('cy',n.y);
+        r.setAttribute('r',n.r+5); g.insertBefore(r, g.firstChild);
+      }
+      if(g){ g.querySelector('.answered-ring').setAttribute('stroke', ANS_RING[b.dataset.a]); g.classList.add('selected'); }
+    });
+  });
+}
+
+function feedbackText(state, n){
+  const hint = `<strong>${n.rehint || '(o autor indicará o trecho para reler)'}</strong>`;
+  if(state==='known') return '🎉 Você já sabe a resposta — parabéns! Siga lendo para confirmar sua teoria.';
+  if(state==='idea')  return '💡 Boa intuição! Para lapidar sua teoria, releia: ' + hint;
+  return '🌫 Sem problemas — este mistério ainda vai se abrir. Volte a estes trechos: ' + hint;
 }
 </script>
 </body>

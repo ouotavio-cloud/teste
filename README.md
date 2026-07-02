@@ -2,33 +2,43 @@
 
 Site de leitura imersiva (rolagem contínua) para *O Chapéu de Merlim — Livro Um das Crônicas de Lovecraft*.
 
-Tudo vive em um único arquivo: **`index.html`**. É só abrir no navegador ou hospedar em qualquer lugar (GitHub Pages, Netlify, etc.). Não precisa de login nem servidor.
+Tudo vive em um único arquivo: **`index.html`**. É só abrir no navegador ou hospedar em qualquer lugar (GitHub Pages, Netlify, etc.). Não precisa de login nem servidor. Feito para virar um app mobile depois.
 
-## O que já está pronto (Capítulo 1)
+## Funcionalidades
 
-- **Rolagem contínua** — o leitor avança como num pergaminho, sem trocar de página.
-- **Fundos que mudam por cena** — atmosferas em dark fantasy que trocam suavemente conforme a cena.
-- **Música por capítulo (YouTube)** — botão de ambientação no canto; toca só o áudio, dá para pausar e trocar.
-- **Desbloqueio ao fim do capítulo** — botão de concluir abre um painel com duas abas:
-  - **Documentos** — notas de referência, isoladas por categoria: *Personagens · Locais · Itens & Artefatos · Mistérios*.
-  - **Mapa Mental** — mapa visual dos mistérios em aberto; toque num ponto para ler a anotação.
-- Sem login: o desbloqueio vale para a sessão de leitura atual.
+- **Rolagem contínua** — o leitor avança como num pergaminho, sem trocar de página, pelos capítulos em sequência.
+- **Fundos que mudam por cena** — atmosferas em dark fantasy que trocam suavemente conforme a cena (uma por cena).
+- **Música por capítulo (YouTube)** — botão ♪ no canto; toca só o áudio, dá para pausar e trocar. Ao entrar em outro capítulo, a trilha acompanha automaticamente (se estiver tocando).
+- **Aba "Arquivo" sempre disponível** — botão 📜 no canto para abrir os documentos e o mapa mental a qualquer momento durante a leitura.
+- **Trava progressiva** — todo o conteúdo existe no arquivo, mas cada capítulo só desbloqueia seus documentos e mistérios quando o leitor marca aquele capítulo como concluído. Quem parou no Cap. 3 não vê nada do Cap. 9.
+- **Documentos por categoria** — Personagens · Locais · Itens & Artefatos · Mistérios, com filtros.
+- **Mapa mental interativo com perguntas respondíveis** — cada mistério é um ponto no mapa. Ao tocar, o leitor marca o que descobriu:
+  - **💡 Tenho uma ideia** → o app indica um capítulo/trecho para reler (campo `rehint`).
+  - **✓ Já sei a resposta** → parabeniza o leitor.
+  - **🌫 Não faço ideia** → também indica trechos para reler.
+  Perguntas respondidas ganham um anel colorido no mapa.
+- Sem login: o progresso e as respostas valem para a sessão de leitura atual.
 
-## Como editar (sem mexer no resto)
+## Como editar (bloco `CONFIG DO AUTOR`, no topo do `<script>`)
 
-Abra `index.html` e procure o bloco **`CONFIG DO AUTOR`**, no início do `<script>`:
-
-- **Música**: cole o link do YouTube em `CHAPTER_MUSIC`.
+- **Música de cada capítulo**: preencha o campo `music` do capítulo em `BOOK` (link do YouTube).
 - **Imagens de fundo (arte pintada)**: em `SCENE_IMAGES`, cole a URL da sua arte ao lado do id da cena
-  (`arrival`, `tavern`, `brawl`, `bard`, `after-song`, `morning`, `battle`, `aftermath`).
-  Enquanto estiver vazio, usa a atmosfera em CSS.
+  (ex.: `"c1-chegada"`, `"c2-ruas"`...). Enquanto vazio, usa a atmosfera em CSS.
+- **Dicas de releitura das perguntas**: campo `rehint` em cada nó do mapa mental — troque o texto
+  placeholder pelo capítulo/trecho real que o leitor deve reler.
 
-Logo abaixo, os blocos `SCENES`, `DOCS` e `MM_NODES` guardam, respectivamente, o texto do capítulo,
-as notas de documentação (cada uma com `category:`) e os nós do mapa mental. Basta seguir o mesmo formato para
-adicionar conteúdo.
+O array `BOOK` guarda os capítulos; cada capítulo tem `scenes` (texto), `docs` (notas, cada uma com
+`category:`) e `mindmap` (nós e ligações). Basta seguir o mesmo formato para adicionar os próximos capítulos.
 
-## Próximos passos possíveis
+## Conteúdo atual
 
-- Adicionar o Capítulo 2 (o texto já existe, termina em "continua...").
-- Trocar as atmosferas em CSS pelas artes pintadas definitivas.
-- Numa versão futura: contas de usuário para salvar o progresso entre dispositivos.
+- **Capítulo 1 — O Chapéu de Merlim** (completo)
+- **Capítulo 2 — As Ruas de Lovecraft** (até onde o texto vai, termina em "continua...")
+
+## Próximos passos
+
+- Adicionar os próximos capítulos conforme o livro avança.
+- Trocar as atmosferas em CSS pelas artes pintadas definitivas e definir as músicas.
+- Preencher os campos `rehint` com os trechos de releitura de cada pergunta.
+- Empacotar como app mobile (ex.: um wrapper como Capacitor/PWA) quando o conteúdo estiver fechado.
+- Versão futura: contas de usuário para salvar progresso entre dispositivos.
