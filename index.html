@@ -304,10 +304,13 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
     <div class="music-title" id="musicTitle">Nenhuma música definida</div>
     <div class="music-btns">
       <button id="playPauseBtn">▶ Tocar</button>
+      <button id="changeMusicBtn">🔗 Link</button>
+      <button id="chooseMusicBtn">📁 Arquivo</button>
     </div>
+    <input class="music-file-input" id="musicFileInput" type="file" accept="audio/*">
     <audio id="audioInline" loop preload="none"></audio>
     <a class="music-link" id="musicFallback" href="#" target="_blank" rel="noopener">Abrir áudio</a>
-    <div class="music-note" id="musicNote">Toque para ouvir a ambientação deste capítulo.</div>
+    <div class="music-note" id="musicNote">Use um <strong>arquivo de áudio</strong> do celular ou um link direto .mp3/.m4a/.ogg.</div>
   </div>
 </div>
 
@@ -1108,14 +1111,16 @@ document.getElementById('enterBtn').addEventListener('click', ()=>{
 /* ═══════════════════════════════════════════════════════════════
    MÚSICA POR CAPÍTULO — áudio real dentro da página
    ═══════════════════════════════════════════════════════════════ */
-let isPlaying=false, loadedTrack=null;
+let isPlaying=false, loadedTrack=null, selectedObjectUrl=null;
 const audioInline = document.getElementById('audioInline');
 const musicNote = document.getElementById('musicNote');
+const musicFileInput = document.getElementById('musicFileInput');
 
 function setMusicStatus(msg){ document.getElementById('musicTitle').textContent = msg; }
 function getChapter(){ return BOOK.find(c=>c.id===currentChapterId); }
 function isDirectAudioUrl(url){ return /^(blob:|data:audio\/|https?:\/\/|content:\/\/|file:\/\/)/i.test(String(url||'')) && /\.(mp3|m4a|aac|ogg|oga|wav|webm)(\?|#|$)/i.test(String(url||'')); }
 function isYoutubeUrl(url){ return /(youtube\.com|youtu\.be)/i.test(String(url||'')); }
+function fileLabel(file){ return file ? file.name.replace(/\.[^.]+$/, '') : 'Arquivo selecionado'; }
 
 function showMusicFallback(url, show=false){
   const link = document.getElementById('musicFallback');
@@ -1128,6 +1133,9 @@ function stopTrack(){
   audioInline.pause();
   isPlaying=false;
   updatePlayBtn();
+}
+function revokeSelectedObjectUrl(){
+  if(selectedObjectUrl){ URL.revokeObjectURL(selectedObjectUrl); selectedObjectUrl=null; }
 }
 
 function setCurrentChapter(chId){
@@ -1151,22 +1159,37 @@ document.getElementById('musicToggle').addEventListener('click', ()=>{
 
 document.getElementById('playPauseBtn').addEventListener('click', async ()=>{
   const track = chapterMusic[currentChapterId];
-  if(!track){ setMusicStatus('Nenhuma música definida para este capítulo'); return; }
+  if(!track){ musicFileInput.click(); return; }
+  await playTrack(track);
+});
+document.getElementById('changeMusicBtn').addEventListener('click', ()=>promptMusic(false));
+document.getElementById('chooseMusicBtn').addEventListener('click', ()=>musicFileInput.click());
+musicFileInput.addEventListener('change', async ()=>{
+  const file = musicFileInput.files && musicFileInput.files[0];
+  if(!file) return;
+  revokeSelectedObjectUrl();
+  selectedObjectUrl = URL.createObjectURL(file);
+  const track = { type:'file', src:selectedObjectUrl, title:fileLabel(file) };
+  chapterMusic[currentChapterId] = track;
+  loadedTrack = track;
+  setMusicStatus(track.title);
+  setMusicHint('Arquivo carregado. Toque em <strong>Tocar</strong> para ouvir sem sair da página.');
   await playTrack(track);
 });
 
 async function playTrack(track){
   const src = typeof track === 'string' ? track : track.src;
-  const title = typeof track === 'string' ? getChapter().num : (track.title || getChapter().num);
-  if(!src){ setMusicStatus('Nenhuma música definida para este capítulo'); return; }
+  const title = typeof track === 'string' ? 'Música selecionada' : track.title;
+  if(!src){ musicFileInput.click(); return; }
   if(isYoutubeUrl(src)){
-    setMusicStatus('Link do YouTube não toca em segundo plano');
-    setMusicHint('Defina no código um link direto de áudio (.mp3/.m4a/.ogg) para a trilha deste capítulo.');
+    setMusicStatus('YouTube bloqueia reprodução dentro deste arquivo');
+    setMusicHint('Escolha um <strong>arquivo de áudio</strong> do celular ou cole um link direto .mp3/.m4a/.ogg. Assim o play funciona aqui na página.');
+    musicFileInput.click();
     return;
   }
   if(typeof track === 'string' && !isDirectAudioUrl(track)){
-    setMusicStatus('Trilha inválida');
-    setMusicHint('O link da trilha deve terminar em <strong>.mp3</strong>, <strong>.m4a</strong>, <strong>.ogg</strong> ou <strong>.wav</strong>.');
+    setMusicStatus('Esse link não parece ser áudio direto');
+    setMusicHint('Use um link que termine em <strong>.mp3</strong>, <strong>.m4a</strong>, <strong>.ogg</strong> ou escolha um arquivo do aparelho.');
     return;
   }
   try{
@@ -1182,15 +1205,39 @@ async function playTrack(track){
       await audioInline.play();
       isPlaying=true;
       setMusicStatus(title || 'Tocando em segundo plano');
-      setMusicHint('Tocando dentro da página. Pode fechar o painel e continuar lendo.');
+      setMusicHint('Tocando dentro da página. Pode fechar o painel de música e continuar lendo.');
     }
   }catch(err){
     isPlaying=false;
-    setMusicStatus('Não consegui tocar esta trilha');
-    setMusicHint('O navegador pode ter bloqueado o áudio. Use o link abaixo para abrir em outra aba.');
+    setMusicStatus('Não consegui tocar esse áudio');
+    setMusicHint('O link pode não ser áudio direto ou o navegador bloqueou o arquivo. A opção mais garantida é <strong>Arquivo</strong> e escolher uma música do celular.');
     showMusicFallback(src, true);
   }
   updatePlayBtn();
+}
+
+function promptMusic(shouldPlay=false){
+  const ch = getChapter();
+  const current = typeof chapterMusic[currentChapterId] === 'string' ? chapterMusic[currentChapterId] : '';
+  const url = prompt('Cole um link direto de áudio (.mp3/.m4a/.ogg). Links do YouTube não tocam em segundo plano neste arquivo:', current || ch.music || '');
+  if(!url) return;
+  if(isYoutubeUrl(url)){
+    setMusicStatus('YouTube não toca embutido aqui');
+    setMusicHint('Para funcionar no mobile sem sair da página, use <strong>Arquivo</strong> ou um link direto de áudio .mp3/.m4a/.ogg.');
+    return;
+  }
+  if(!isDirectAudioUrl(url)){
+    setMusicStatus('Link inválido para o player');
+    setMusicHint('Cole um link direto que termine em <strong>.mp3</strong>, <strong>.m4a</strong>, <strong>.ogg</strong>, <strong>.wav</strong> ou <strong>.webm</strong>.');
+    return;
+  }
+  const track = { type:'url', src:url.trim(), title:'Música por link' };
+  chapterMusic[currentChapterId] = track;
+  loadedTrack = track;
+  setMusicStatus('Música pronta por link');
+  setMusicHint('Link carregado. Toque em <strong>Tocar</strong> para ouvir dentro da página.');
+  updatePlayBtn();
+  if(shouldPlay) playTrack(track);
 }
 
 audioInline.addEventListener('ended', ()=>{ isPlaying=false; updatePlayBtn(); });
