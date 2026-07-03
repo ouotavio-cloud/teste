@@ -369,6 +369,12 @@ const SCENE_IMAGES = {
   "c2-criatura": BG_FOG,
   "c2-sangue": BG_BAR,
   "c2-final": BG_FOG,
+  // Capítulo 3
+  "c3-esfera": BG_BAR,
+  "c3-pressao": BG_BAR,
+  "c3-roberto": BG_FOG,
+  "c3-livius": BG_FOG,
+  "c3-retorno": BG_BAR,
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1006,7 +1012,147 @@ const BOOK = [
     links:[ [0,1],[0,2],[4,3],[4,6],[5,6],[3,6],[0,4] ],
   },
 },
-/*__CH2__*/
+
+{
+  id:"ch3", num:"Capítulo Três", title:"A Bruxa e o Garoto",
+  music:"",   // ← cole aqui o link de YouTube da ambientação do Cap. 3
+  endText:"O capítulo termina aqui, por enquanto — Roberto encara a aproximação da Igreja, enquanto Dolon escuta o relato de Lívius. (continua...)",
+  scenes:[
+    { id:"c3-esfera", label:"A Bruxa Desperta", bg:"tavern", html:`
+<p>Ainda envolto pela esfera negra, Deimos não ousava desfazer o feitiço. Torcia — com toda a força que lhe restava — para que Roberto estivesse bem, para que tivesse terminado o que havia começado no beco.</p>
+<p>Puxou o máximo de ar que conseguiu de uma vez, como quem escapa de um afogamento.</p>
+<p>Foi então que a bruxa despertou.</p>
+<p>Acordou assustada, os cabelos negros se destacando mesmo contra a escuridão da esfera, os olhos azuis tão claros que pareciam brilhar como a lua. Olhou ao redor, desesperada, e não viu nada além de trevas. Ainda presa nos braços de Deimos, foi o ferimento aberto em seu lado esquerdo que ela encontrou primeiro — e, antes que ele pudesse dizer qualquer coisa, cravou os dedos ali.</p>
+<p>Deimos gritou de dor e a soltou.</p>
+<p>Ela mal sabia do que aquela esfera era feita. Não importava. Recitou um ritual rápido, quase instintivo — e foi certeira. A magia se dissipou, a esfera negra desfazendo-se no ar como fumaça.</p>
+<p>Medeia, que observava da soleira, percebeu o instante em que a esfera sumiu e se aproximou.</p>
+<p class="dialogue">— Calma, a gente é do bem, nós somos os mo— — começou Deimos.</p>
+<p>Uma onda de choque de pura energia o interrompeu, arremessando-o para trás.</p>
+<p class="dialogue">— Não sei quem você é, e pouco me importa — disse a bruxa, a voz cortando o ar como lâmina. — Agora que tive a chance de me libertar, ninguém mais vai me escravizar.</p>
+<p>Ela se ergueu no ar, sustentada pela própria magia. Os cabelos flutuavam ao redor do rosto como serpentes negras; os olhos brilhavam num roxo vibrante, esferas da mesma cor pulsando nas palmas das mãos. A pressão que emanava dela rachou os pilares de madeira que sustentavam o telhado da taverna — o bar inteiro parecia prestes a desabar sobre eles.</p>
+<p>A criatura frágil e indefesa que, minutos antes, tremia presa numa jaula de vidro tinha dado lugar a algo completamente diferente: uma bruxa imponente, poderosa, que intimidava só de existir naquele espaço.</p>
+<p class="dialogue">— Porra, você vai desabar a casa em cima da gente! — gritou Deimos, erguendo-se com dificuldade. — Para com isso!</p>
+<p>A pressão só se intensificou.</p>
+<p class="dialogue">— Deimos. Mata ela. AGORA. — A voz de Medeia não deixava espaço para negociação.</p>
+<p class="dialogue">— Porra, não — respondeu ele.</p>`},
+    { id:"c3-pressao", label:"Pressão e Selamento", bg:"brawl", html:`
+<p>A bruxa gritou — um som estridente, agudo, que fez os ouvidos de todos ali sangrarem. Não era um grito de dor. Era como se ela estivesse se carregando, absorvendo cada onda de pressão que emanava do próprio corpo, acumulando algo que Deimos não conseguia nem começar a conter.</p>
+<p class="dialogue">— Ela vai matar todo mundo aqui quando terminar de carregar — disse Medeia, os olhos fixos na bruxa.</p>
+<p>Deimos sentiu o peso da escolha cair sobre ele inteiro. Todo aquele sacrifício — a corrida, o sangue, a magia proibida — para nada? Salvar uma garota indefesa só para, no fim, ser ele mesmo a matá-la? Ou morrer ali, no chão de uma taverna destruída, sem rumo, sem resposta, sem redenção alguma?</p>
+<p>Enquanto ele pensava, Medeia começou a caminhar na direção da bruxa, uma adaga já na mão — mas a distância era grande demais, e quando viu Deimos se preparar para conjurar, recuou.</p>
+<p>Deimos estava decidido. Reuniu tudo o que lhe restava de vigor para um único ataque, tudo ou nada—</p>
+<p>E foi então que a bruxa levou as mãos à própria cabeça, soltou um grito estridente e caiu de joelhos.</p>
+<p>Desmaiou antes de tocar o chão.</p>
+<p>Livre da ameaça iminente, Deimos correu até ela. Deitou-a sobre o que sobrara do balcão e, com as mãos ainda tremendo, tirou da bolsa as mesmas notas rúnicas de antes — só que menores dessa vez, coladas aos pares: uma na clavícula, outra no abdômen, outra na perna, de cada lado do corpo.</p>
+<p class="dialogue">— Parede de selamento simples.</p>
+<p>A barreira se formou ao redor do tronco e das pernas da bruxa, prendendo-a por inteiro — apenas a cabeça ficou livre.</p>
+<p>Só então Deimos se virou para Dolon, ainda caído no canto, a respiração cada vez mais fraca. Inclinou a garrafa rosada e despejou o conteúdo goela abaixo. Dolon vomitou instantaneamente — um jato de sangue que se acumulara nos pulmões — e, com ele fora, voltou a respirar.</p>
+<p>Deimos permitiu-se, finalmente, um segundo de alívio. O sentimento de dever cumprido foi a última coisa que sentiu antes de desmaiar de exaustão.</p>`},
+    { id:"c3-roberto", label:"Roberto no Beco", bg:"beco", html:`
+<p>No beco, Roberto acordou.</p>
+<p>Não conseguia se mexer. Sentiu-se observado antes mesmo de abrir os olhos direito — e o pensamento chegou rápido, afiado: <em>perigo?</em></p>
+<p>Não. Não fazia sentido. Perigo não esperaria ele acordar para atacá-lo — pelo menos não um perigo daquele tamanho. O coração que batia por perto era pequeno e rápido, do tipo que pertence a um roedor, ou a algum pequeno mamífero. Talvez estivesse enganando os próprios sentidos; a manopla tinha drenado cada gota de energia de seus músculos, e agora ele mal conseguia levantar um dedo, quanto mais confiar no que ouvia ou via.</p>
+<p>O vulto se moveu de novo.</p>
+<p>Roberto via pouco — estava de costas no chão, olhando para cima, e a coisa era rápida demais para a visão cansada que lhe restava depois do combate. Mas havia algo ali, um deslize na cautela, uma curiosidade que traía a “criatura” à espreita. Aos poucos, o vulto pareceu se acalmar, aproximando-se.</p>
+<p>E foi então que Roberto entendeu.</p>
+<p>Era um garoto.</p>
+<p class="dialogue">— Saia daqui, garoto — disse Roberto, a voz rouca, arrastada. — Se aquela criatura levantar, você vai ficar pior que aquele cara.</p>
+<p>O garoto olhou para a criatura, e depois para os destroços ao lado dela — pedaços de uma pessoa, sangue vermelho-vinho espalhado pela pedra.</p>
+<p>Analisou bem. Já tinham se passado bons minutos, e a criatura não dava sinal de vida. Ele não saiu da espreita. Permaneceu ali, olhando o orc imóvel no chão, carrancudo, cansado demais até para resmungar.</p>
+<p class="dialogue">— PORRA! — Roberto gritou, frustrado por não conseguir se mover.</p>
+<p>O garoto teve um leve susto, mas se recompôs.</p>
+<p>Foi então que Roberto ouviu.</p>
+<p>Sua visão podia traí-lo — cansada, embaçada pelo combate — mas os ouvidos, nunca. Impactos no chão, vários, uma marcha se aproximando com velocidade.</p>`},
+    { id:"c3-livius", label:"Lívius e a Marcha", bg:"streets", html:`
+<p class="dialogue">— Você tem que levantar — disse o garoto. — Se te virem, você vai morrer.</p>
+<p>Roberto se surpreendeu. O garoto também tinha ouvido a marcha? Ou tinha corrido na frente dela?</p>
+<p class="dialogue">— Eles quem?</p>
+<p class="dialogue">— Os cavaleiros. Eles são agressivos com não humanos.</p>
+<p class="dialogue">— Não consigo me mover — respondeu Roberto. — Que cavaleiros? E você tem que ir, ou vão te culpar pelas mortes também.</p>
+<p class="dialogue">— Vamos, tem que ser rápido.</p>
+<p class="dialogue">— Para de ser irritante. — A voz de Roberto saiu mais dura do que pretendia. — Não tem porque você estar aqui. Você vai se machucar. E o que uma criança como você está fazendo sozinha nas ruas vazias dessa cidade?</p>
+<p>O garoto tomou coragem. Aproximou-se de Roberto e tentou erguê-lo.</p>
+<p class="dialogue">— Que porra você está fazendo — disse Roberto. — Você não tem forças para me levantar.</p>
+<p>Mas o garoto insistiu, fazendo mais e mais força, até conseguir rolá-lo. Roberto gritou de dor. O garoto se assustou e parou. Começou a andar de um lado para o outro, ansioso, sem saber o que fazer com as próprias mãos.</p>
+<p class="dialogue">— Por que está se arriscando? — perguntou Roberto, virado de lado, curioso apesar da dor que latejava em cada osso do corpo. — Por que está fazendo isso?</p>
+<p>Constrangido, o garoto puxou a gola da camisa e mostrou o ombro. A pele ali era escamosa, acinzentada, espalhando-se como uma doença — a mesma cor que marcava a pele de Roberto. Cobriu-se de novo, rápido.</p>
+<p class="dialogue">— Você é como eu.</p>
+<p>Roberto sentiu, pela primeira vez, algo parecido com vergonha por ter sido rude com o garoto. Mas ainda relutante, perguntou:</p>
+<p class="dialogue">— Qual seu nome?</p>
+<p class="dialogue">— Lívius Greinier.</p>
+<p class="dialogue">— Lívius. Você precisa sair daqui.</p>
+<p>Foi então que ambos ouviram — mais perto agora, marchas longas, cadenciadas.</p>
+<p class="dialogue">— Eles não são como os cavaleiros do rei — disse Lívius, a voz apertada. — São da Igreja. Vão te matar. Você nos salvou. Eu preciso te ajudar.</p>
+<p>Roberto olhou para ele. Via, no rosto do garoto, aquela mistura estranha de infância e urgência — o olhar lúdico e ao mesmo tempo preocupado de uma criança que não devia ter mais de dez ou onze anos.</p>
+<p class="dialogue">— E você vai — disse Roberto. — Corre até o Chapéu de Merlim, a taverna no topo da colina.</p>
+<p class="dialogue">— Mas eu não posso entrar. Sou uma criança.</p>
+<p class="dialogue">— Eu conheço a dona. Diz que veio pelo Roberto, e conta o que aconteceu aqui. Avisa que precisam se preparar, que o grupo é grande, e que eles têm que ser sorrateiros — não bater de frente. Agora corre.</p>
+<p class="dialogue">— E você?</p>
+<p class="dialogue">— Viu o que eu fiz com aquilo? — Roberto fez um gesto fraco na direção das cinzas espalhadas pelo beco. — Só tô descansando. Vou ficar de pé antes deles chegarem. — Fez uma pausa. — Me faz mais um favor. Leva isso na minha cintura.</p>
+<p>Lívius olhou para a manopla presa ali.</p>
+<p class="dialogue">— Pode pegar. Leva pra taverna. Mas só entrega nas mãos do Dolon ou do Deimos. Ninguém mais.</p>
+<p>Os olhos do garoto brilharam.</p>
+<p class="dialogue">— Vai logo, garoto.</p>
+<p>Lívius acenou com a cabeça, determinado, pegou a manopla e correu, desaparecendo na neblina.</p>
+<p>Roberto esperou até não conseguir mais vê-lo. Então respirou fundo e, devagar, começou a levar o próprio corpo ao limite. Contraiu os músculos com o que lhe restava de força — e eles sangraram sob a compressão, como bexigas estourando sob pressão demais. Forçou-se a ficar de pé, o sangue escorrendo pelos poros, o corpo nitidamente abatido, quebrado como um vaso de cerâmica caído no chão — sustentado apenas pela força de vontade, virado na direção de onde os soldados se aproximavam.</p>`},
+    { id:"c3-retorno", label:"O Retorno ao Chapéu de Merlim", bg:"tavern", html:`
+<p>O garoto cortava a neblina, correndo o mais rápido que suas pernas permitiam, rumo à colina, rumo à taverna. A manopla pesava em suas mãos — pesada demais para um corpo daquele tamanho —, mas nada o fazia parar. Os pulmões ardiam a cada respiração, o gosto de bile subindo pela garganta, e ainda assim ele corria.</p>
+<p>Quando finalmente alcançou a porta do Chapéu de Merlim, bateu com toda a força que lhe restava.</p>
+<p>Um homem abriu.</p>
+<p>O capuz cobria o rosto, deixando para trás apenas escuridão; adagas presas ao colete denunciavam um guerreiro — e isso, para o garoto, podia significar tanto sorte quanto desgraça.</p>
+<p>O homem encarou-o em silêncio. Foi só quando os olhos pousaram na manopla que ele falou, calmo demais para a cena que tinha diante de si:</p>
+<p class="dialogue">— Onde conseguiu esse artefato, garoto?</p>
+<p>Lívius recuou, assustado, apertando a manopla contra o peito com as duas mãos. Deu alguns passos para trás. O homem abriu o restante da porta e avançou, a mão já se estendendo para tomar o que era dele por direito de pergunta.</p>
+<p>Foi então que o garoto viu — atrás do homem, dentro do salão — uma mulher. Cabelos negros, olhos púrpura. Mas o que prendeu sua atenção foi o pequeno avental de couro amarrado à cintura dela, o tipo que qualquer taverneiro usava.</p>
+<p class="dialogue">— Você é a dona, né? — perguntou, quase sem fôlego. — Me deixa entrar. Eu vim a mando do Roberto.</p>
+<p>Medeia travou. Não entendia nada daquilo — mal conhecia o nome Roberto, só o tinha ouvido uma vez, na boca de Deimos, associado ao orc que viajava com ele.</p>
+<p>Dolon, que já caminhava na direção do garoto, ergueu a mão no ar, pronto para tomar a manopla.</p>
+<p class="dialogue">— Roberto te mandou aqui? — perguntou. — Onde ele está, e por que ele te deu essa manopla?</p>
+<p class="dialogue">— Ele tá na cidade, no beco de Nur — disse Lívius, as palavras saindo atropeladas. — Ele matou uma criatura gigante e tá ferido. Os cavaleiros da Igreja estão vindo. Denunciaram ele. Vão matar ele.</p>
+<p class="dialogue">— Ainda não explicou da manopla.</p>
+<p>O garoto se encolheu. Não sabia quem era aquele homem, e Roberto tinha sido claro: a manopla só podia ir para as mãos de Dolon ou Deimos, ninguém mais.</p>
+<p>Pensou rápido. Esquivou-se de Dolon, correu para dentro da taverna e conseguiu se esconder atrás de Medeia.</p>
+<p class="dialogue">— Só vou entregar essa manopla pro Deimos e pro Dolon — disse, a voz tremendo de determinação. — Foi o que o Roberto pediu.</p>
+<p>Dolon se aproximou mais, afastando Medeia do caminho. O garoto tremeu, mas não largou a manopla — usou o próprio corpo, pequeno demais para aquilo, para protegê-la.</p>
+<p>Dolon se abaixou, colocando-se na altura do garoto, o capuz ainda baixo, ainda ameaçador. Sacou a adaga — a lâmina cortando o ar com um silvo fino ao sair da bainha —, e por um instante Lívius só viu escuridão o encarando de dentro daquele capuz.</p>
+<p>Então Dolon abaixou o capuz.</p>
+<p>Sorriu.</p>
+<p class="dialogue">— Eu sou Dolon.</p>
+<p>Apontou para a lâmina. No cabo, gravado em fios dourados, estava o próprio nome.</p>
+<p class="dialogue">— E você é um garoto corajoso, que o Roberto confiou. Se ele deixou a manopla nas suas mãos, você deve guardá-la.</p>
+<p>Os olhos de Lívius brilharam. Aceitou o peso daquele elogio como quem aceita um juramento.</p>
+<p>Mas o rosto de Dolon voltou a ficar sério quase imediatamente.</p>
+<p class="dialogue">— Agora preciso dos detalhes — disse. — Me conta o que aconteceu com o Roberto.</p>`},
+  ],
+  docs:[
+    { category:"personagem", title:"A Bruxa sem Nome", body:"A garota salva por Deimos desperta como uma força aterradora. Cabelos negros, olhos claros como a lua ao acordar, depois energia roxa pulsando nas mãos e nos olhos. Reage como alguém que acabou de escapar de um cativeiro — e acredita que qualquer aproximação é mais uma tentativa de escravizá-la." },
+    { category:"personagem", title:"Lívius Greinier", body:"Garoto de cerca de dez ou onze anos, rápido, nervoso e corajoso. Encontra Roberto caído no beco e insiste em ajudá-lo mesmo com a marcha inimiga se aproximando. Tem escamas acinzentadas no ombro, semelhantes às marcas do orc, e por isso se reconhece nele." },
+    { category:"personagem", title:"Roberto — O Orc", body:"Mesmo com o corpo destruído após derrotar a criatura, ainda consegue pensar com clareza sob pressão. Confia a manopla a Lívius, manda um aviso estratégico à taverna e se força a ficar de pé apenas na base da vontade e da dor." },
+    { category:"personagem", title:"Dolon — O Assassino", body:"Sobrevive por pouco. Deimos despeja a poção rosada goela abaixo e ele volta a respirar depois de expelir o sangue preso no pulmão. Ao fim do capítulo, é ele quem acolhe Lívius, valida sua coragem e toma para si a tarefa de ouvir o relato sobre Roberto." },
+    { category:"personagem", title:"Medeia — A Taverneira", body:"Permanece fria em meio ao colapso da bruxa e é a primeira a mandar Deimos matá-la para salvar todos no bar. Também serve de abrigo para Lívius quando ele chega à taverna com a manopla e o aviso sobre a Igreja." },
+    { category:"local", title:"Beco de Nur", body:"Lugar do confronto com a criatura e do despertar de Roberto. Coberto de neblina, estreito e tomado por ruínas, torna-se também o ponto para onde os cavaleiros da Igreja marcham." },
+    { category:"local", title:"O Chapéu de Merlim — Depois do Caos", body:"A taverna ainda está destruída, mas continua sendo o centro da história: abriga Deimos, Medeia, Dolon e agora a bruxa desacordada, além de receber Lívius com a manopla e o pedido de socorro de Roberto." },
+    { category:"artefato", title:"A Manopla de Thorne", body:"Agora nas mãos de Lívius, por ordem de Roberto. O artefato já drenou energia demais do orc, mas continua central — valioso o bastante para Dolon desconfiar de imediato quando o garoto aparece carregando-o." },
+    { category:"artefato", title:"Parede de Selamento Simples", body:"Feitiço improvisado de Deimos com notas rúnicas menores coladas em pares no corpo da bruxa. A barreira prende o tronco e as pernas dela, deixando apenas a cabeça livre." },
+    { category:"misterio", title:"Quem é a bruxa?", body:"Ela acorda assustada, reage como alguém que foi cativa por muito tempo e possui um poder absurdo, a ponto de quase derrubar a taverna sozinha. É a mesma bruxa intermediária do capítulo anterior — mas o que exatamente ela é, e por que caiu desacordada no auge do poder?" },
+    { category:"misterio", title:"A Igreja de Lovecraft", body:"Lívius distingue com medo os cavaleiros do rei dos cavaleiros da Igreja. Segundo ele, são agressivos com não humanos — e agora vêm atrás de Roberto em número suficiente para exigir uma abordagem sorrateira. O que exatamente a Igreja faz nesta cidade?" },
+    { category:"misterio", title:"Lívius e os seus", body:"As escamas no ombro do garoto revelam que ele é ‘como Roberto’. Isso sugere que há mais pessoas marcadas, escondidas ou perseguidas em Lovecraft. Quantos são? E de que estão fugindo?" },
+    { category:"misterio", title:"O próximo embate", body:"Roberto se prepara para enfrentar, sozinho e quebrado, a aproximação dos soldados. Na taverna, Dolon acaba de receber a notícia. Quem vai chegar primeiro ao beco — os aliados, a Igreja, ou a tragédia?" },
+  ],
+  mindmap:{
+    nodes:[
+      { x:400, y:58,  r:30, label:"A Bruxa",           color:"#7b4fa0", desc:"A garota salva desperta como uma força descontrolada. Fala como alguém que acabou de escapar de uma escravidão mágica. Quase destrói a taverna antes de desmaiar e ser selada por Deimos.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:180, y:145, r:24, label:"Selamento",         color:"#c9a44a", desc:"Deimos improvisa uma parede de selamento simples com notas rúnicas menores. A bruxa fica presa do pescoço para baixo — solução provisória para um problema muito maior.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:620, y:142, r:26, label:"A Igreja",          color:"#8b4a4a", desc:"Os cavaleiros da Igreja marcham até o beco de Nur. Lívius os teme mais do que aos cavaleiros do rei e diz que são agressivos com não humanos. Por que estão vindo atrás de Roberto?", rehint:"(o autor indicará o trecho para reler)" },
+      { x:115, y:300, r:24, label:"Lívius",            color:"#6a8b4a", desc:"Garoto corajoso que encontra Roberto, revela as escamas no ombro e corre até a taverna carregando a manopla. A ligação dele com Roberto parece ser mais profunda do que um encontro casual.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:400, y:220, r:24, label:"A Manopla",         color:"#8b6a4a", desc:"Artefato pesado demais para o corpo de Lívius, mas importante o bastante para Roberto confiar a ele. Continua sendo peça-chave entre os protagonistas e seus perseguidores.", rehint:"(o autor indicará o trecho para reler)" },
+      { x:685, y:300, r:26, label:"Roberto",           color:"#5a7a5a", desc:"Exausto, sangrando e quase imóvel, ainda decide o plano, protege Lívius e força o próprio corpo a ficar de pé para encarar os soldados que se aproximam. Até onde o corpo dele aguenta?", rehint:"(o autor indicará o trecho para reler)" },
+      { x:400, y:345, r:24, label:"O Próximo Confronto", color:"#b02038", desc:"Na taverna, Dolon ouve o aviso. No beco, Roberto espera a Igreja chegar. A colisão entre esses dois movimentos parece inevitável — e deve redefinir o rumo do grupo em Lovecraft.", rehint:"(o autor indicará o trecho para reler)" },
+    ],
+    links:[ [0,1],[0,2],[0,6],[3,4],[3,5],[4,5],[2,5],[2,6],[4,6] ],
+  },
+},
+/*__CH3__*/
 ];
 /* ═══════════════════════════════════════════════════════════════
    ESTADO (sessão apenas — sem login)
