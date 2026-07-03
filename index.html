@@ -19,19 +19,19 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 ::selection{background:rgba(201,164,74,0.25);color:#fff}
 
 /* ═══════════ SCENE BACKGROUNDS ═══════════ */
-.scene-bg{position:fixed;inset:0;z-index:0;transition:opacity 2s ease;opacity:0;pointer-events:none;background-size:cover;background-position:center}
+.scene-bg{position:fixed;inset:0;z-index:0;transition:opacity 2s ease;opacity:0;pointer-events:none;background-size:cover;background-position:var(--bg-pos, center)}
 .scene-bg.active{opacity:1}
 .scene-bg::after{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse at 50% 35%,transparent 0%,rgba(10,10,15,0.35) 70%,rgba(10,10,15,0.75) 100%),
   linear-gradient(to bottom,rgba(10,10,15,0.35) 0%,rgba(10,10,15,0.55) 45%,rgba(10,10,15,0.9) 100%)}
 /* Cenas com arte real: leve desfoque + véu mais escuro para o texto no centro sobressair */
-.scene-bg.has-image{filter:blur(2px);transform:scale(1.06)}
+.scene-bg.has-image{filter:blur(1.15px);transform:scale(1.025)}
 .scene-bg.has-image::after{background:
   radial-gradient(ellipse at 50% 42%,rgba(8,8,12,0.30) 0%,rgba(8,8,12,0.62) 62%,rgba(8,8,12,0.8) 100%),
   linear-gradient(to bottom,rgba(8,8,12,0.5) 0%,rgba(8,8,12,0.58) 45%,rgba(8,8,12,0.86) 100%)}
 
 /* Moods — Capítulo 1 */
-.bg-arrival{background:linear-gradient(150deg,#0d1117 0%,#1a2130 30%,#152430 60%,#0b0f16 100%);background-size:400% 400%;animation:fogDrift 26s ease infinite}
+.bg-arrival{background:linear-gradient(150deg,#0d1117 0%,#1a2130 30%,#152430 60%,#0b0f16 100%);background-size:400% 400%}
 .bg-arrival::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 22%,rgba(90,120,150,0.16) 0%,transparent 62%)}
 .bg-tavern{background:linear-gradient(180deg,#1a1108 0%,#2c1b0b 42%,#1d1206 100%)}
 .bg-tavern::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 28% 42%,rgba(210,145,52,0.12) 0%,transparent 58%),radial-gradient(ellipse at 72% 62%,rgba(180,100,30,0.08) 0%,transparent 50%)}
@@ -49,13 +49,13 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .bg-aftermath::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 30%,rgba(150,128,84,0.09) 0%,transparent 62%),radial-gradient(ellipse at 60% 15%,rgba(224,200,140,0.06) 0%,transparent 55%)}
 
 /* Moods — Capítulo 2 */
-.bg-streets{background:linear-gradient(180deg,#0e1214 0%,#141b1c 40%,#0c1012 100%);background-size:300% 300%;animation:fogDrift 30s ease infinite}
+.bg-streets{background:linear-gradient(180deg,#0e1214 0%,#141b1c 40%,#0c1012 100%);background-size:300% 300%}
 .bg-streets::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(120,140,140,0.1) 0%,transparent 60%),radial-gradient(ellipse at 70% 75%,rgba(80,110,90,0.07) 0%,transparent 50%)}
 .bg-confession{background:linear-gradient(180deg,#120c18 0%,#1a1024 45%,#0e0a14 100%)}
 .bg-confession::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 45% 55%,rgba(123,79,160,0.16) 0%,transparent 55%),radial-gradient(ellipse at 60% 30%,rgba(150,60,60,0.06) 0%,transparent 45%)}
 .bg-admin{background:linear-gradient(180deg,#101319 0%,#191d26 45%,#0d1016 100%)}
 .bg-admin::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 28%,rgba(150,160,180,0.09) 0%,transparent 58%),radial-gradient(ellipse at 40% 70%,rgba(180,150,70,0.05) 0%,transparent 50%)}
-.bg-nur{background:linear-gradient(180deg,#12100a 0%,#1a160c 40%,#0e0c07 100%);background-size:320% 320%;animation:fogDrift 28s ease infinite}
+.bg-nur{background:linear-gradient(180deg,#12100a 0%,#1a160c 40%,#0e0c07 100%);background-size:320% 320%}
 .bg-nur::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(200,175,90,0.12) 0%,transparent 55%),radial-gradient(ellipse at 30% 30%,rgba(120,130,120,0.06) 0%,transparent 45%)}
 .bg-shop{background:linear-gradient(180deg,#0d1410 0%,#141c14 45%,#0a0f0b 100%)}
 .bg-shop::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 45%,rgba(90,150,90,0.1) 0%,transparent 55%),radial-gradient(ellipse at 65% 60%,rgba(190,150,60,0.08) 0%,transparent 50%)}
@@ -68,10 +68,10 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 
 @keyframes fogDrift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-.fog-layer{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.5;background:
+.fog-layer{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.42;background:
   radial-gradient(ellipse 80% 50% at 20% 30%,rgba(160,170,185,0.05),transparent 60%),
   radial-gradient(ellipse 70% 40% at 80% 70%,rgba(160,170,185,0.045),transparent 60%);
-  animation:fogFloat 40s ease-in-out infinite alternate;mix-blend-mode:screen}
+  mix-blend-mode:screen}
 @keyframes fogFloat{0%{transform:translate3d(-3%,0,0) scale(1.05)}100%{transform:translate3d(3%,-2%,0) scale(1.15)}}
 
 /* ═══════════ HERO ═══════════ */
@@ -131,7 +131,7 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 
 /* ═══════════ MUSIC PLAYER ═══════════ */
 .music-player{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;background:rgba(12,12,20,0.95);border:1px solid rgba(201,164,74,0.22);border-radius:10px;overflow:hidden;backdrop-filter:blur(12px);transition:width 0.3s,height 0.3s;width:54px;height:54px;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
-.music-player.expanded{width:290px;height:auto}
+.music-player.expanded{width:min(320px,calc(100vw - 2rem));height:auto}
 .music-toggle{width:54px;height:54px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--accent);font-size:1.35rem;border:none;background:transparent;transition:color 0.3s}
 .music-toggle:hover{color:var(--text)}
 .music-toggle.playing{animation:pulse 2s infinite}
@@ -144,9 +144,16 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .music-btns button{font-family:var(--font-ui);font-size:0.66rem;padding:0.4rem 0.85rem;background:transparent;border:1px solid rgba(201,164,74,0.22);color:var(--text-dim);cursor:pointer;border-radius:4px;transition:all 0.2s}
 .music-btns button:hover{border-color:var(--accent);color:var(--accent)}
 .music-btns button.active{background:rgba(201,164,74,0.12);border-color:var(--accent);color:var(--accent)}
-/* Player do YouTube: presente na tela (não pode ficar em -9999px, senão o
-   navegador — sobretudo no celular — recusa a reprodução), mas invisível. */
-#yt-player{position:fixed;bottom:0;left:0;width:1px;height:1px;opacity:0;border:0;pointer-events:none;z-index:0}
+.music-link{display:none;margin-top:0.55rem;font-family:var(--font-ui);font-size:0.68rem;color:var(--accent);text-decoration:none;letter-spacing:0.03em}
+.chapter-jump{position:fixed;left:50%;bottom:1.5rem;z-index:101;transform:translateX(-50%);display:flex;align-items:center;gap:0.35rem;padding:0.35rem;background:rgba(12,12,20,0.95);border:1px solid rgba(201,164,74,0.22);border-radius:10px;backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.chapter-jump.hidden{display:none}
+.chapter-jump button,.chapter-jump select{height:38px;border:1px solid rgba(201,164,74,0.18);background:transparent;color:var(--accent);border-radius:6px;font-family:var(--font-ui)}
+.chapter-jump button{width:38px;cursor:pointer;font-size:1rem}
+.chapter-jump select{max-width:150px;padding:0 0.55rem;font-size:0.68rem;color:var(--text);background:rgba(12,12,20,0.98)}
+.music-link.show{display:inline-flex}
+.music-file-input{display:none}
+.music-note{margin-top:0.65rem;font-family:var(--font-ui);font-size:0.66rem;line-height:1.45;color:var(--text-dim)}
+.music-note strong{color:var(--accent);font-weight:500}
 
 /* ═══════════ MODAL / PAINEL ═══════════ */
 .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(4,4,9,0.88);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity 0.35s}
@@ -221,15 +228,44 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
 .progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent-dim),var(--accent));z-index:150;transition:width 0.1s;width:0%}
 
 /* ═══════════ RESPONSIVE ═══════════ */
-@media(max-width:600px){
-  body{font-size:1.06rem}
-  .reading-container{padding:0 1.25rem 4rem}
-  .scene-section p{font-size:1.07rem}
+@media(max-width:700px){
+  html{scroll-behavior:auto}
+  body{font-size:1.04rem;line-height:1.72}
+  .hero{min-height:92dvh;padding:1.35rem}
+  .hero .ornament{font-size:1.35rem;margin-bottom:1rem}
+  .hero h1{font-size:clamp(2rem,12vw,3.15rem);letter-spacing:0.04em}
+  .hero .subtitle{font-size:0.78rem;letter-spacing:0.12em;margin-bottom:1.6rem}
+  .hero .epigraph{font-size:0.98rem;line-height:1.55;margin-bottom:2rem;max-width:30rem}
+  .hero .enter-btn{width:min(100%,19rem);padding:0.85rem 1rem;letter-spacing:0.14em}
+  .hero .scroll-hint{display:none}
+  .reading-container{max-width:100%;padding:0 1rem 5.8rem}
+  .chapter-header{padding:4.6rem 0 2.4rem;margin-bottom:2rem}
+  .scene-section{margin-bottom:2.35rem;transform:translateY(18px)}
+  .scene-section p{font-size:1.06rem;line-height:1.74;text-indent:1em;margin-bottom:1rem}
+  .scene-section p:first-of-type::first-letter{font-size:2.55rem;padding-right:0.45rem}
+  .scene-label{font-size:0.56rem;letter-spacing:0.22em;margin-bottom:1.2rem}
+  .scene-divider{letter-spacing:0.45em;margin:2.4rem 0}
+  .song-lyrics{padding:1.05rem 1.1rem;margin:1.35rem 0}
+  .scene-bg.has-image{filter:blur(1.25px);transform:scale(1.01);background-size:cover;background-position:var(--bg-pos-mobile,var(--bg-pos,center))}
+  .scene-bg.has-image::after{background:linear-gradient(to bottom,rgba(8,8,12,0.72),rgba(8,8,12,0.64) 45%,rgba(8,8,12,0.88))}
   .music-player{bottom:1rem;right:1rem}
+  .music-player.expanded{left:1rem;right:1rem;width:auto;max-height:calc(100dvh - 2rem);overflow:auto}
+  .music-controls{padding:0.35rem 0.9rem 0.95rem}
+  .music-embed{height:145px}
+  .chapter-jump{bottom:4.65rem;left:50%;right:auto;max-width:calc(100vw - 2rem)}
+  .chapter-jump select{max-width:138px}
   .access-btn{bottom:1rem;left:1rem}
+  .dock-btn,.music-player,.music-toggle{width:50px;height:50px}
   .modal{max-height:93vh;border-radius:8px}
-  .modal-tab{padding:0.8rem 0.7rem;font-size:0.7rem}
-  .modal-body{padding:1rem 1.1rem}
+  .modal-header{padding:0.35rem 0.65rem}
+  .modal-tab{padding:0.75rem 0.55rem;font-size:0.66rem;letter-spacing:0.06em}
+  .modal-body{padding:1rem 1.05rem}
+}
+
+@media(max-width:380px){
+  .reading-container{padding-left:0.82rem;padding-right:0.82rem}
+  .scene-section p{font-size:1.02rem}
+  .music-btns button{flex:1;min-width:0;padding-left:0.55rem;padding-right:0.55rem}
 }
 </style>
 </head>
@@ -268,11 +304,21 @@ body{background:var(--bg-deep);color:var(--text);font-family:var(--font-body);fo
     <div class="music-title" id="musicTitle">Nenhuma música definida</div>
     <div class="music-btns">
       <button id="playPauseBtn">▶ Tocar</button>
-      <button id="changeMusicBtn">🔗 Trocar</button>
+      <button id="changeMusicBtn">🔗 Link</button>
+      <button id="chooseMusicBtn">📁 Arquivo</button>
     </div>
+    <input class="music-file-input" id="musicFileInput" type="file" accept="audio/*">
+    <audio id="audioInline" loop preload="none"></audio>
+    <a class="music-link" id="musicFallback" href="#" target="_blank" rel="noopener">Abrir áudio</a>
+    <div class="music-note" id="musicNote">Use um <strong>arquivo de áudio</strong> do celular ou um link direto .mp3/.m4a/.ogg.</div>
   </div>
 </div>
-<div id="yt-player"></div>
+
+<div class="chapter-jump" id="chapterJump" title="Navegar entre capítulos">
+  <button id="prevChapterBtn" aria-label="Capítulo anterior">‹</button>
+  <select id="chapterSelect" aria-label="Escolher capítulo"></select>
+  <button id="nextChapterBtn" aria-label="Próximo capítulo">›</button>
+</div>
 
 <!-- PAINEL (Arquivo) -->
 <div class="modal-overlay" id="unlockModal">
@@ -307,8 +353,8 @@ const SCENE_IMAGES = {
   // Capítulo 1
   "c1-chegada": BG_BAR,
   "c1-cartas": BG_BAR,
-  "c1-caos": BG_BARDO,
-  "c1-bardo": BG_BAR,
+  "c1-caos": BG_BAR,
+  "c1-bardo": BG_BARDO,
   "c1-poscancao": BG_BAR,
   "c1-manha": BG_BAR,
   "c1-batalha": BG_BAR,
@@ -316,7 +362,7 @@ const SCENE_IMAGES = {
   // Capítulo 2
   "c2-ruas": BG_CITY,
   "c2-despertar": BG_BAR,
-  "c2-administracao": BG_CITY,
+  "c2-administracao": BG_FOG,
   "c2-beco": BG_FOG,
   "c2-casa": BG_CABIN,
   "c2-bateria": BG_CABIN,
@@ -967,13 +1013,13 @@ const BOOK = [
    ═══════════════════════════════════════════════════════════════ */
 const completed = new Set();          // capítulos marcados como lidos
 const answers = {};                   // "chId:idx" -> 'idea' | 'known' | 'noidea'
-const chapterMusic = {};              // chId -> videoId  (da config ou do usuário)
+const chapterMusic = {};              // chId -> trilha de audio escolhida
 let currentChapterId = BOOK[0].id;    // capítulo sendo lido (pelo scroll)
 let panelChapter = null;              // capítulo aberto no painel
 let panelTab = 'docs';
 let panelCat = 'todos';
 
-BOOK.forEach(ch=>{ chapterMusic[ch.id] = extractVideoId(ch.music); });
+BOOK.forEach(ch=>{ chapterMusic[ch.id] = ch.music || ""; });
 
 /* ═══════════════════════════════════════════════════════════════
    RENDER — fundos + cenas + fins de capítulo
@@ -999,6 +1045,8 @@ BOOK.forEach((ch)=>{
     bg.className = 'scene-bg bg-' + scene.bg + (hasImg ? ' has-image' : '') + (scene.id===firstBgId ? ' active' : '');
     bg.dataset.bg = scene.id;
     if(hasImg) bg.style.backgroundImage = `url("${SCENE_IMAGES[scene.id]}")`;
+    if(scene.id==='c2-ruas') bg.style.setProperty('--bg-pos-mobile','62% center');
+    if(scene.id==='c1-bardo') bg.style.setProperty('--bg-pos-mobile','46% center');
     bgContainer.appendChild(bg);
 
     // Bloco de texto da cena
@@ -1061,82 +1109,140 @@ document.getElementById('enterBtn').addEventListener('click', ()=>{
 });
 
 /* ═══════════════════════════════════════════════════════════════
-   MÚSICA POR CAPÍTULO — YouTube (só áudio)
+   MÚSICA POR CAPÍTULO — áudio real dentro da página
    ═══════════════════════════════════════════════════════════════ */
-let player=null, isPlaying=false, playerReady=false, pendingVideoId=null, loadedVideoId=null, wantPlay=false;
+let isPlaying=false, loadedTrack=null, selectedObjectUrl=null;
+const audioInline = document.getElementById('audioInline');
+const musicNote = document.getElementById('musicNote');
+const musicFileInput = document.getElementById('musicFileInput');
 
-function extractVideoId(url){
-  if(!url) return null;
-  const m = String(url).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([a-zA-Z0-9_-]{11})/);
-  return m ? m[1] : null;
+function setMusicStatus(msg){ document.getElementById('musicTitle').textContent = msg; }
+function getChapter(){ return BOOK.find(c=>c.id===currentChapterId); }
+function isDirectAudioUrl(url){ return /^(blob:|data:audio\/|https?:\/\/|content:\/\/|file:\/\/)/i.test(String(url||'')) && /\.(mp3|m4a|aac|ogg|oga|wav|webm)(\?|#|$)/i.test(String(url||'')); }
+function isYoutubeUrl(url){ return /(youtube\.com|youtu\.be)/i.test(String(url||'')); }
+function fileLabel(file){ return file ? file.name.replace(/\.[^.]+$/, '') : 'Arquivo selecionado'; }
+
+function showMusicFallback(url, show=false){
+  const link = document.getElementById('musicFallback');
+  if(url){ link.href = url; }
+  link.textContent = 'Abrir áudio';
+  link.classList.toggle('show', !!(show && url));
 }
-
-const tag = document.createElement('script');
-tag.src = 'https://www.youtube.com/iframe_api';
-document.head.appendChild(tag);
-
-window.onYouTubeIframeAPIReady = function(){
-  player = new YT.Player('yt-player', {
-    height:'1', width:'1',
-    playerVars:{ autoplay:0, controls:0, playsinline:1, origin:location.origin },
-    events:{
-      onReady: ()=>{
-        playerReady=true;
-        if(pendingVideoId){ const v=pendingVideoId; pendingVideoId=null; doLoad(v); }
-      },
-      onStateChange: (e)=>{ isPlaying = (e.data===YT.PlayerState.PLAYING); updatePlayBtn(); },
-      onError: (e)=>{
-        // 101/150 = incorporação desativada pelo dono do vídeo; 100 = removido; 2 = id inválido
-        const msg = (e.data===101||e.data===150)
-          ? 'Esse vídeo bloqueia reprodução fora do YouTube. Tente outro link.'
-          : 'Não deu para tocar esse link. Tente outro vídeo.';
-        document.getElementById('musicTitle').textContent = msg;
-        isPlaying=false; updatePlayBtn();
-      }
-    }
-  });
-};
-
-function doLoad(id){ loadedVideoId=id; wantPlay=false; player.loadVideoById(id); }
+function setMusicHint(msg){ musicNote.innerHTML = msg; }
+function stopTrack(){
+  audioInline.pause();
+  isPlaying=false;
+  updatePlayBtn();
+}
+function revokeSelectedObjectUrl(){
+  if(selectedObjectUrl){ URL.revokeObjectURL(selectedObjectUrl); selectedObjectUrl=null; }
+}
 
 function setCurrentChapter(chId){
   currentChapterId = chId;
-  const ch = BOOK.find(c=>c.id===chId);
+  const ch = getChapter();
+  const track = chapterMusic[chId];
   document.getElementById('musicChapter').textContent = 'Ambientação — ' + ch.num;
-  const vid = chapterMusic[chId];
-  document.getElementById('musicTitle').textContent = vid ? ('Ambientação de ' + ch.num) : 'Nenhuma música definida';
-  // Troca suave: se está tocando e o capítulo tem trilha própria diferente, acompanha
-  if(isPlaying && playerReady && vid && vid!==loadedVideoId){ doLoad(vid); }
+  loadedTrack = track || null;
+  if(track){ setMusicStatus(track.title || 'Música pronta'); }
+  else { setMusicStatus('Nenhuma música definida'); }
+  showMusicFallback(track?.src || track, false);
+  updatePlayBtn();
+  updateChapterSelect();
 }
 
 document.getElementById('musicToggle').addEventListener('click', ()=>{
-  document.getElementById('musicPlayer').classList.toggle('expanded');
+  const playerBox = document.getElementById('musicPlayer');
+  const expanded = playerBox.classList.toggle('expanded');
+  document.getElementById('chapterJump').classList.toggle('hidden', expanded);
 });
-document.getElementById('playPauseBtn').addEventListener('click', ()=>{
-  const vid = chapterMusic[currentChapterId];
-  if(!vid){ promptMusic(); return; }
-  if(!player || !playerReady){
-    // API ainda carregando: memoriza e toca assim que ficar pronto
-    pendingVideoId = vid;
-    document.getElementById('musicTitle').textContent = 'Carregando player…';
+
+document.getElementById('playPauseBtn').addEventListener('click', async ()=>{
+  const track = chapterMusic[currentChapterId];
+  if(!track){ musicFileInput.click(); return; }
+  await playTrack(track);
+});
+document.getElementById('changeMusicBtn').addEventListener('click', ()=>promptMusic(false));
+document.getElementById('chooseMusicBtn').addEventListener('click', ()=>musicFileInput.click());
+musicFileInput.addEventListener('change', async ()=>{
+  const file = musicFileInput.files && musicFileInput.files[0];
+  if(!file) return;
+  revokeSelectedObjectUrl();
+  selectedObjectUrl = URL.createObjectURL(file);
+  const track = { type:'file', src:selectedObjectUrl, title:fileLabel(file) };
+  chapterMusic[currentChapterId] = track;
+  loadedTrack = track;
+  setMusicStatus(track.title);
+  setMusicHint('Arquivo carregado. Toque em <strong>Tocar</strong> para ouvir sem sair da página.');
+  await playTrack(track);
+});
+
+async function playTrack(track){
+  const src = typeof track === 'string' ? track : track.src;
+  const title = typeof track === 'string' ? 'Música selecionada' : track.title;
+  if(!src){ musicFileInput.click(); return; }
+  if(isYoutubeUrl(src)){
+    setMusicStatus('YouTube bloqueia reprodução dentro deste arquivo');
+    setMusicHint('Escolha um <strong>arquivo de áudio</strong> do celular ou cole um link direto .mp3/.m4a/.ogg. Assim o play funciona aqui na página.');
+    musicFileInput.click();
     return;
   }
-  if(isPlaying){ player.pauseVideo(); }
-  else if(loadedVideoId!==vid){ doLoad(vid); }
-  else { player.playVideo(); }
-});
-document.getElementById('changeMusicBtn').addEventListener('click', promptMusic);
-
-function promptMusic(){
-  const ch = BOOK.find(c=>c.id===currentChapterId);
-  const url = prompt('Cole o link do YouTube para a ambientação de ' + ch.num + ':', ch.music || '');
-  if(!url) return;
-  const id = extractVideoId(url);
-  if(!id){ alert('Link inválido. Use um link do YouTube.'); return; }
-  chapterMusic[currentChapterId] = id;
-  document.getElementById('musicTitle').textContent = 'Ambientação de ' + ch.num;
-  if(playerReady){ doLoad(id); } else { pendingVideoId=id; }
+  if(typeof track === 'string' && !isDirectAudioUrl(track)){
+    setMusicStatus('Esse link não parece ser áudio direto');
+    setMusicHint('Use um link que termine em <strong>.mp3</strong>, <strong>.m4a</strong>, <strong>.ogg</strong> ou escolha um arquivo do aparelho.');
+    return;
+  }
+  try{
+    if(audioInline.src !== src){
+      audioInline.src = src;
+      audioInline.load();
+    }
+    if(isPlaying){
+      audioInline.pause();
+      isPlaying=false;
+      setMusicStatus('Música pausada');
+    }else{
+      await audioInline.play();
+      isPlaying=true;
+      setMusicStatus(title || 'Tocando em segundo plano');
+      setMusicHint('Tocando dentro da página. Pode fechar o painel de música e continuar lendo.');
+    }
+  }catch(err){
+    isPlaying=false;
+    setMusicStatus('Não consegui tocar esse áudio');
+    setMusicHint('O link pode não ser áudio direto ou o navegador bloqueou o arquivo. A opção mais garantida é <strong>Arquivo</strong> e escolher uma música do celular.');
+    showMusicFallback(src, true);
+  }
+  updatePlayBtn();
 }
+
+function promptMusic(shouldPlay=false){
+  const ch = getChapter();
+  const current = typeof chapterMusic[currentChapterId] === 'string' ? chapterMusic[currentChapterId] : '';
+  const url = prompt('Cole um link direto de áudio (.mp3/.m4a/.ogg). Links do YouTube não tocam em segundo plano neste arquivo:', current || ch.music || '');
+  if(!url) return;
+  if(isYoutubeUrl(url)){
+    setMusicStatus('YouTube não toca embutido aqui');
+    setMusicHint('Para funcionar no mobile sem sair da página, use <strong>Arquivo</strong> ou um link direto de áudio .mp3/.m4a/.ogg.');
+    return;
+  }
+  if(!isDirectAudioUrl(url)){
+    setMusicStatus('Link inválido para o player');
+    setMusicHint('Cole um link direto que termine em <strong>.mp3</strong>, <strong>.m4a</strong>, <strong>.ogg</strong>, <strong>.wav</strong> ou <strong>.webm</strong>.');
+    return;
+  }
+  const track = { type:'url', src:url.trim(), title:'Música por link' };
+  chapterMusic[currentChapterId] = track;
+  loadedTrack = track;
+  setMusicStatus('Música pronta por link');
+  setMusicHint('Link carregado. Toque em <strong>Tocar</strong> para ouvir dentro da página.');
+  updatePlayBtn();
+  if(shouldPlay) playTrack(track);
+}
+
+audioInline.addEventListener('ended', ()=>{ isPlaying=false; updatePlayBtn(); });
+audioInline.addEventListener('pause', ()=>{ if(!audioInline.ended){ isPlaying=false; updatePlayBtn(); } });
+audioInline.addEventListener('play', ()=>{ isPlaying=true; updatePlayBtn(); });
 
 function updatePlayBtn(){
   const btn = document.getElementById('playPauseBtn');
@@ -1144,8 +1250,25 @@ function updatePlayBtn(){
   btn.classList.toggle('active', isPlaying);
   document.getElementById('musicToggle').classList.toggle('playing', isPlaying);
 }
-setCurrentChapter(currentChapterId);
 
+/* Navegação rápida entre capítulos */
+const chapterSelect = document.getElementById('chapterSelect');
+BOOK.forEach((ch, idx)=>{
+  const opt = document.createElement('option');
+  opt.value = ch.id;
+  opt.textContent = (idx+1) + '. ' + ch.title;
+  chapterSelect.appendChild(opt);
+});
+function updateChapterSelect(){ if(chapterSelect) chapterSelect.value = currentChapterId; }
+function goChapter(delta){
+  const idx = BOOK.findIndex(c=>c.id===currentChapterId);
+  const next = BOOK[Math.max(0, Math.min(BOOK.length-1, idx+delta))];
+  if(next) document.getElementById(next.id).scrollIntoView({ behavior:'smooth', block:'start' });
+}
+document.getElementById('prevChapterBtn').addEventListener('click', ()=>goChapter(-1));
+document.getElementById('nextChapterBtn').addEventListener('click', ()=>goChapter(1));
+chapterSelect.addEventListener('change', ()=>document.getElementById(chapterSelect.value).scrollIntoView({ behavior:'smooth', block:'start' }));
+setCurrentChapter(currentChapterId);
 /* ═══════════════════════════════════════════════════════════════
    DESBLOQUEIO / TRAVA PROGRESSIVA
    ═══════════════════════════════════════════════════════════════ */
