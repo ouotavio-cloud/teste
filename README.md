@@ -21,10 +21,11 @@ Tudo vive em um único arquivo: **`index.html`**. É só abrir no navegador ou h
 
 ## Como editar (bloco `CONFIG DO AUTOR`, no topo do `<script>`)
 
-- **Música de cada capítulo**: preencha o campo `music` do capítulo em `BOOK` com um **link direto
-  de áudio** (`.mp3`, `.m4a`, `.ogg`, `.wav`). O player usa um `<audio>` nativo, que toca em segundo
-  plano enquanto o leitor rola. **Links do YouTube não tocam em segundo plano** — o próprio player
-  avisa e oferece abrir o link à parte. Dá para colar/trocar a trilha na hora pelo botão de música.
+- **Música de cada capítulo**: preencha o campo `music` do capítulo em `BOOK` com um **link do
+  YouTube**. O player usa o YouTube embutido e **oculto** (só o áudio, sem vídeo), tocando em
+  segundo plano enquanto o leitor rola. No player há **Tocar** e **🔗 Trocar** (para colar/trocar
+  o link na hora). Observação: alguns vídeos têm a incorporação desativada pelo dono e não tocam
+  fora do YouTube — nesse caso o player avisa e basta usar outro link.
 - **Imagens de fundo (arte pintada)**: já vêm 5 artes embutidas (bar, bardo, cidade, beco, cabana),
   mapeadas às cenas em `SCENE_IMAGES`. Para trocar uma arte, redefina a constante correspondente
   (`BG_BAR`, `BG_BARDO`, `BG_CITY`, `BG_FOG`, `BG_CABIN`) ou aponte a cena para outra; use `""`
